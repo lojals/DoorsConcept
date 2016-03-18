@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		7AE17F411C9C64ED0018F260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F401C9C64ED0018F260 /* AppDelegate.swift */; };
-		7AE17F431C9C64ED0018F260 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F421C9C64ED0018F260 /* ViewController.swift */; };
 		7AE17F461C9C64ED0018F260 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F441C9C64ED0018F260 /* Main.storyboard */; };
 		7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F471C9C64ED0018F260 /* DoorConcept.xcdatamodeld */; };
 		7AE17F4B1C9C64ED0018F260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F4A1C9C64ED0018F260 /* Assets.xcassets */; };
 		7AE17F4E1C9C64ED0018F260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F4C1C9C64ED0018F260 /* LaunchScreen.storyboard */; };
 		7AE17F591C9C64ED0018F260 /* DoorConceptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F581C9C64ED0018F260 /* DoorConceptTests.swift */; };
+		7AE17F711C9C916F0018F260 /* building_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F651C9C916F0018F260 /* building_icon.png */; };
+		7AE17F721C9C916F0018F260 /* building_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F661C9C916F0018F260 /* building_icon@2x.png */; };
+		7AE17F731C9C916F0018F260 /* building_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F671C9C916F0018F260 /* building_icon@3x.png */; };
+		7AE17F741C9C916F0018F260 /* door_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F681C9C916F0018F260 /* door_icon.png */; };
+		7AE17F751C9C916F0018F260 /* door_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F691C9C916F0018F260 /* door_icon@2x.png */; };
+		7AE17F761C9C916F0018F260 /* door_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F6A1C9C916F0018F260 /* door_icon@3x.png */; };
+		7AE17F771C9C916F0018F260 /* history_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F6B1C9C916F0018F260 /* history_icon.png */; };
+		7AE17F781C9C916F0018F260 /* history_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F6C1C9C916F0018F260 /* history_icon@2x.png */; };
+		7AE17F791C9C916F0018F260 /* history_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F6D1C9C916F0018F260 /* history_icon@3x.png */; };
+		7AE17F7A1C9C916F0018F260 /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F6E1C9C916F0018F260 /* user_icon.png */; };
+		7AE17F7B1C9C916F0018F260 /* user_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F6F1C9C916F0018F260 /* user_icon@2x.png */; };
+		7AE17F7C1C9C916F0018F260 /* user_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F701C9C916F0018F260 /* user_icon@3x.png */; };
+		7AE17F821C9C945D0018F260 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F811C9C945D0018F260 /* ViewController.swift */; };
+		7AE17F8A1C9C94D70018F260 /* GenericTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F891C9C94D70018F260 /* GenericTabBarViewController.swift */; };
+		EADC6C47E7B6CB0E22A01F21 /* libPods-DoorConcept.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2A9594E5F6E26B40FA2C47 /* libPods-DoorConcept.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +43,6 @@
 /* Begin PBXFileReference section */
 		7AE17F3D1C9C64ED0018F260 /* DoorConcept.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorConcept.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE17F401C9C64ED0018F260 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7AE17F421C9C64ED0018F260 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7AE17F451C9C64ED0018F260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AE17F481C9C64ED0018F260 /* DoorConcept.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DoorConcept.xcdatamodel; sourceTree = "<group>"; };
 		7AE17F4A1C9C64ED0018F260 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +51,23 @@
 		7AE17F541C9C64ED0018F260 /* DoorConceptTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoorConceptTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE17F581C9C64ED0018F260 /* DoorConceptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorConceptTests.swift; sourceTree = "<group>"; };
 		7AE17F5A1C9C64ED0018F260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AE17F651C9C916F0018F260 /* building_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = building_icon.png; sourceTree = "<group>"; };
+		7AE17F661C9C916F0018F260 /* building_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "building_icon@2x.png"; sourceTree = "<group>"; };
+		7AE17F671C9C916F0018F260 /* building_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "building_icon@3x.png"; sourceTree = "<group>"; };
+		7AE17F681C9C916F0018F260 /* door_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_icon.png; sourceTree = "<group>"; };
+		7AE17F691C9C916F0018F260 /* door_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door_icon@2x.png"; sourceTree = "<group>"; };
+		7AE17F6A1C9C916F0018F260 /* door_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door_icon@3x.png"; sourceTree = "<group>"; };
+		7AE17F6B1C9C916F0018F260 /* history_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history_icon.png; sourceTree = "<group>"; };
+		7AE17F6C1C9C916F0018F260 /* history_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "history_icon@2x.png"; sourceTree = "<group>"; };
+		7AE17F6D1C9C916F0018F260 /* history_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "history_icon@3x.png"; sourceTree = "<group>"; };
+		7AE17F6E1C9C916F0018F260 /* user_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_icon.png; sourceTree = "<group>"; };
+		7AE17F6F1C9C916F0018F260 /* user_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_icon@2x.png"; sourceTree = "<group>"; };
+		7AE17F701C9C916F0018F260 /* user_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_icon@3x.png"; sourceTree = "<group>"; };
+		7AE17F811C9C945D0018F260 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7AE17F891C9C94D70018F260 /* GenericTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTabBarViewController.swift; sourceTree = "<group>"; };
+		C941FFC8B231DA9C350FF1CE /* Pods-DoorConcept.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorConcept.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoorConcept/Pods-DoorConcept.debug.xcconfig"; sourceTree = "<group>"; };
+		E843F270DC01459121EE3F36 /* Pods-DoorConcept.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorConcept.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoorConcept/Pods-DoorConcept.release.xcconfig"; sourceTree = "<group>"; };
+		ED2A9594E5F6E26B40FA2C47 /* libPods-DoorConcept.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DoorConcept.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADC6C47E7B6CB0E22A01F21 /* libPods-DoorConcept.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +95,8 @@
 				7AE17F3F1C9C64ED0018F260 /* DoorConcept */,
 				7AE17F571C9C64ED0018F260 /* DoorConceptTests */,
 				7AE17F3E1C9C64ED0018F260 /* Products */,
+				8DAEA6D32ED1A6EC8847CCC8 /* Pods */,
+				C73C6800AEABE840C34C3971 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,8 +112,9 @@
 		7AE17F3F1C9C64ED0018F260 /* DoorConcept */ = {
 			isa = PBXGroup;
 			children = (
+				7AE17F631C9C916F0018F260 /* Assets */,
+				7AE17F801C9C945D0018F260 /* Controllers */,
 				7AE17F401C9C64ED0018F260 /* AppDelegate.swift */,
-				7AE17F421C9C64ED0018F260 /* ViewController.swift */,
 				7AE17F441C9C64ED0018F260 /* Main.storyboard */,
 				7AE17F4A1C9C64ED0018F260 /* Assets.xcassets */,
 				7AE17F4C1C9C64ED0018F260 /* LaunchScreen.storyboard */,
@@ -99,6 +133,107 @@
 			path = DoorConceptTests;
 			sourceTree = "<group>";
 		};
+		7AE17F631C9C916F0018F260 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7AE17F641C9C916F0018F260 /* TabBarIcons */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7AE17F641C9C916F0018F260 /* TabBarIcons */ = {
+			isa = PBXGroup;
+			children = (
+				7AE17F651C9C916F0018F260 /* building_icon.png */,
+				7AE17F661C9C916F0018F260 /* building_icon@2x.png */,
+				7AE17F671C9C916F0018F260 /* building_icon@3x.png */,
+				7AE17F681C9C916F0018F260 /* door_icon.png */,
+				7AE17F691C9C916F0018F260 /* door_icon@2x.png */,
+				7AE17F6A1C9C916F0018F260 /* door_icon@3x.png */,
+				7AE17F6B1C9C916F0018F260 /* history_icon.png */,
+				7AE17F6C1C9C916F0018F260 /* history_icon@2x.png */,
+				7AE17F6D1C9C916F0018F260 /* history_icon@3x.png */,
+				7AE17F6E1C9C916F0018F260 /* user_icon.png */,
+				7AE17F6F1C9C916F0018F260 /* user_icon@2x.png */,
+				7AE17F701C9C916F0018F260 /* user_icon@3x.png */,
+			);
+			path = TabBarIcons;
+			sourceTree = "<group>";
+		};
+		7AE17F801C9C945D0018F260 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7AE17F831C9C94B60018F260 /* Generic */,
+				7AE17F841C9C94B60018F260 /* Login */,
+				7AE17F851C9C94B60018F260 /* Profile */,
+				7AE17F861C9C94B60018F260 /* History */,
+				7AE17F871C9C94B60018F260 /* Doors */,
+				7AE17F881C9C94B60018F260 /* Buildings */,
+				7AE17F811C9C945D0018F260 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7AE17F831C9C94B60018F260 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				7AE17F891C9C94D70018F260 /* GenericTabBarViewController.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		7AE17F841C9C94B60018F260 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7AE17F851C9C94B60018F260 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7AE17F861C9C94B60018F260 /* History */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		7AE17F871C9C94B60018F260 /* Doors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Doors;
+			sourceTree = "<group>";
+		};
+		7AE17F881C9C94B60018F260 /* Buildings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buildings;
+			sourceTree = "<group>";
+		};
+		8DAEA6D32ED1A6EC8847CCC8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C941FFC8B231DA9C350FF1CE /* Pods-DoorConcept.debug.xcconfig */,
+				E843F270DC01459121EE3F36 /* Pods-DoorConcept.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C73C6800AEABE840C34C3971 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED2A9594E5F6E26B40FA2C47 /* libPods-DoorConcept.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7AE17F5D1C9C64ED0018F260 /* Build configuration list for PBXNativeTarget "DoorConcept" */;
 			buildPhases = (
+				D978E9FFE73AB42DCFE17CCA /* Check Pods Manifest.lock */,
 				7AE17F391C9C64ED0018F260 /* Sources */,
 				7AE17F3A1C9C64ED0018F260 /* Frameworks */,
 				7AE17F3B1C9C64ED0018F260 /* Resources */,
+				9C9DF68747D551ABEFDF9BE5 /* Embed Pods Frameworks */,
+				098BD887A58871FA301E0127 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,8 +319,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AE17F4E1C9C64ED0018F260 /* LaunchScreen.storyboard in Resources */,
+				7AE17F751C9C916F0018F260 /* door_icon@2x.png in Resources */,
 				7AE17F4B1C9C64ED0018F260 /* Assets.xcassets in Resources */,
+				7AE17F791C9C916F0018F260 /* history_icon@3x.png in Resources */,
+				7AE17F7C1C9C916F0018F260 /* user_icon@3x.png in Resources */,
+				7AE17F731C9C916F0018F260 /* building_icon@3x.png in Resources */,
+				7AE17F741C9C916F0018F260 /* door_icon.png in Resources */,
+				7AE17F7B1C9C916F0018F260 /* user_icon@2x.png in Resources */,
+				7AE17F761C9C916F0018F260 /* door_icon@3x.png in Resources */,
+				7AE17F7A1C9C916F0018F260 /* user_icon.png in Resources */,
+				7AE17F711C9C916F0018F260 /* building_icon.png in Resources */,
+				7AE17F781C9C916F0018F260 /* history_icon@2x.png in Resources */,
 				7AE17F461C9C64ED0018F260 /* Main.storyboard in Resources */,
+				7AE17F721C9C916F0018F260 /* building_icon@2x.png in Resources */,
+				7AE17F771C9C916F0018F260 /* history_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,12 +345,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		098BD887A58871FA301E0127 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoorConcept/Pods-DoorConcept-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C9DF68747D551ABEFDF9BE5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoorConcept/Pods-DoorConcept-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D978E9FFE73AB42DCFE17CCA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7AE17F391C9C64ED0018F260 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AE17F431C9C64ED0018F260 /* ViewController.swift in Sources */,
+				7AE17F8A1C9C94D70018F260 /* GenericTabBarViewController.swift in Sources */,
+				7AE17F821C9C945D0018F260 /* ViewController.swift in Sources */,
 				7AE17F411C9C64ED0018F260 /* AppDelegate.swift in Sources */,
 				7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */,
 			);
@@ -327,6 +526,7 @@
 		};
 		7AE17F5E1C9C64ED0018F260 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C941FFC8B231DA9C350FF1CE /* Pods-DoorConcept.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DoorConcept/Info.plist;
@@ -338,6 +538,7 @@
 		};
 		7AE17F5F1C9C64ED0018F260 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E843F270DC01459121EE3F36 /* Pods-DoorConcept.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DoorConcept/Info.plist;
@@ -390,6 +591,7 @@
 				7AE17F5F1C9C64ED0018F260 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7AE17F601C9C64ED0018F260 /* Build configuration list for PBXNativeTarget "DoorConceptTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +600,7 @@
 				7AE17F621C9C64ED0018F260 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

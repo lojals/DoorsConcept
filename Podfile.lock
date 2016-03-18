@@ -1,0 +1,16 @@
+PODS:
+  - FlatUIKit (1.6.2)
+  - Ophiuchus (1.0.3)
+  - SESlideTableViewCell (0.6.0)
+
+DEPENDENCIES:
+  - FlatUIKit
+  - Ophiuchus (~> 1.0.3)
+  - SESlideTableViewCell
+
+SPEC CHECKSUMS:
+  FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
+  Ophiuchus: 486de58f85284047835a26e23ac9fe4fe2255391
+  SESlideTableViewCell: cb179b1081643b2c7cbb34f9145dd2b78a3eaed5
+
+COCOAPODS: 0.39.0
