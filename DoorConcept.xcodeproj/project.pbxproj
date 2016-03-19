@@ -25,7 +25,6 @@
 		7AE17F7A1C9C916F0018F260 /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F6E1C9C916F0018F260 /* user_icon.png */; };
 		7AE17F7B1C9C916F0018F260 /* user_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F6F1C9C916F0018F260 /* user_icon@2x.png */; };
 		7AE17F7C1C9C916F0018F260 /* user_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F701C9C916F0018F260 /* user_icon@3x.png */; };
-		7AE17F821C9C945D0018F260 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F811C9C945D0018F260 /* ViewController.swift */; };
 		7AE17F8A1C9C94D70018F260 /* GenericTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F891C9C94D70018F260 /* GenericTabBarViewController.swift */; };
 		7AE17F8E1C9C96650018F260 /* AddBuildingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F8D1C9C96650018F260 /* AddBuildingsViewController.swift */; };
 		7AE17F901C9C989E0018F260 /* BuildingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F8F1C9C989E0018F260 /* BuildingsTableViewController.swift */; };
@@ -82,6 +81,10 @@
 		7AE1809B1C9DCB450018F260 /* btn_trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE180981C9DCB450018F260 /* btn_trash.png */; };
 		7AE1809C1C9DCB450018F260 /* btn_trash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE180991C9DCB450018F260 /* btn_trash@2x.png */; };
 		7AE1809D1C9DCB450018F260 /* btn_trash@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1809A1C9DCB450018F260 /* btn_trash@3x.png */; };
+		7AE180A21C9DD3020018F260 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1809F1C9DD3020018F260 /* Logo.png */; };
+		7AE180A31C9DD3020018F260 /* Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE180A01C9DD3020018F260 /* Logo@2x.png */; };
+		7AE180A41C9DD3020018F260 /* Logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE180A11C9DD3020018F260 /* Logo@3x.png */; };
+		7AE180A61C9DD3D70018F260 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE180A51C9DD3D70018F260 /* LoginViewController.swift */; };
 		A7BF9436F7F485EDFE83F97B /* Pods_DoorConcept.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE35B5E3785EC3B2C948928F /* Pods_DoorConcept.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,7 +121,6 @@
 		7AE17F6E1C9C916F0018F260 /* user_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_icon.png; sourceTree = "<group>"; };
 		7AE17F6F1C9C916F0018F260 /* user_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_icon@2x.png"; sourceTree = "<group>"; };
 		7AE17F701C9C916F0018F260 /* user_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_icon@3x.png"; sourceTree = "<group>"; };
-		7AE17F811C9C945D0018F260 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7AE17F891C9C94D70018F260 /* GenericTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTabBarViewController.swift; sourceTree = "<group>"; };
 		7AE17F8D1C9C96650018F260 /* AddBuildingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBuildingsViewController.swift; sourceTree = "<group>"; };
 		7AE17F8F1C9C989E0018F260 /* BuildingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingsTableViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,10 @@
 		7AE180981C9DCB450018F260 /* btn_trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_trash.png; sourceTree = "<group>"; };
 		7AE180991C9DCB450018F260 /* btn_trash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_trash@2x.png"; sourceTree = "<group>"; };
 		7AE1809A1C9DCB450018F260 /* btn_trash@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_trash@3x.png"; sourceTree = "<group>"; };
+		7AE1809F1C9DD3020018F260 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		7AE180A01C9DD3020018F260 /* Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo@2x.png"; sourceTree = "<group>"; };
+		7AE180A11C9DD3020018F260 /* Logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo@3x.png"; sourceTree = "<group>"; };
+		7AE180A51C9DD3D70018F260 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C941FFC8B231DA9C350FF1CE /* Pods-DoorConcept.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorConcept.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoorConcept/Pods-DoorConcept.debug.xcconfig"; sourceTree = "<group>"; };
 		DE35B5E3785EC3B2C948928F /* Pods_DoorConcept.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoorConcept.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E843F270DC01459121EE3F36 /* Pods-DoorConcept.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorConcept.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoorConcept/Pods-DoorConcept.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +254,7 @@
 		7AE17F631C9C916F0018F260 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				7AE1809E1C9DD3020018F260 /* Logo */,
 				7AE180971C9DCB450018F260 /* buttons */,
 				7AE180781C9DC0330018F260 /* Buildings_avatars */,
 				7AE17FDD1C9CD0200018F260 /* doors_icons */,
@@ -285,7 +292,6 @@
 				7AE17F861C9C94B60018F260 /* History */,
 				7AE17F871C9C94B60018F260 /* Doors */,
 				7AE17F881C9C94B60018F260 /* Buildings */,
-				7AE17F811C9C945D0018F260 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 		7AE17F841C9C94B60018F260 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				7AE180A51C9DD3D70018F260 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -446,6 +453,16 @@
 			path = buttons;
 			sourceTree = "<group>";
 		};
+		7AE1809E1C9DD3020018F260 /* Logo */ = {
+			isa = PBXGroup;
+			children = (
+				7AE1809F1C9DD3020018F260 /* Logo.png */,
+				7AE180A01C9DD3020018F260 /* Logo@2x.png */,
+				7AE180A11C9DD3020018F260 /* Logo@3x.png */,
+			);
+			path = Logo;
+			sourceTree = "<group>";
+		};
 		8DAEA6D32ED1A6EC8847CCC8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +568,7 @@
 				7AE17FD01C9CB9210018F260 /* build_0@3x.png in Resources */,
 				7AE17FED1C9CD0200018F260 /* door_0.png in Resources */,
 				7AE17FF71C9CD0200018F260 /* door_3@2x.png in Resources */,
+				7AE180A41C9DD3020018F260 /* Logo@3x.png in Resources */,
 				7AE1808E1C9DC0330018F260 /* build_big_2.png in Resources */,
 				7AE17F751C9C916F0018F260 /* door_icon@2x.png in Resources */,
 				7AE17F4B1C9C64ED0018F260 /* Assets.xcassets in Resources */,
@@ -559,9 +577,11 @@
 				7AE17FD61C9CB9210018F260 /* build_2@3x.png in Resources */,
 				7AE180911C9DC0330018F260 /* build_big_3.png in Resources */,
 				7AE17F7C1C9C916F0018F260 /* user_icon@3x.png in Resources */,
+				7AE180A21C9DD3020018F260 /* Logo.png in Resources */,
 				7AE17FEF1C9CD0200018F260 /* door_0@3x.png in Resources */,
 				7AE17FD91C9CB9210018F260 /* build_3@3x.png in Resources */,
 				7AE17F731C9C916F0018F260 /* building_icon@3x.png in Resources */,
+				7AE180A31C9DD3020018F260 /* Logo@2x.png in Resources */,
 				7AE180901C9DC0330018F260 /* build_big_2@3x.png in Resources */,
 				7AE1808D1C9DC0330018F260 /* build_big_1@3x.png in Resources */,
 				7AE17FF31C9CD0200018F260 /* door_2.png in Resources */,
@@ -675,11 +695,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE180A61C9DD3D70018F260 /* LoginViewController.swift in Sources */,
 				7AE17F8A1C9C94D70018F260 /* GenericTabBarViewController.swift in Sources */,
 				7AE17FFD1C9CD0D60018F260 /* DoorsTableViewController.swift in Sources */,
 				7AE17F941C9C9FA40018F260 /* UIColorExtension.swift in Sources */,
 				7AE180001C9CD20B0018F260 /* DoorsTableViewCell.swift in Sources */,
-				7AE17F821C9C945D0018F260 /* ViewController.swift in Sources */,
 				7AE17F8E1C9C96650018F260 /* AddBuildingsViewController.swift in Sources */,
 				7AE17F411C9C64ED0018F260 /* AppDelegate.swift in Sources */,
 				7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */,
