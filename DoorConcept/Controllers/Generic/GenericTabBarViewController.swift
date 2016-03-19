@@ -12,7 +12,9 @@ class GenericTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.tintColor = UIColor.purpleColor()
+//        self.tabBar.configureFlatTabBarWithColor(UIColor.DCThemeColorContrastMain())
+        self.tabBar.tintColor = UIColor.DCThemeColorMain()
+        self.tabBar.translucent = false
     }
 
     override func didReceiveMemoryWarning() {
