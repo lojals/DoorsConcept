@@ -7,29 +7,41 @@
 //
 
 import UIKit
+import FlatUIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var imgLogo: UIImageView!
+    @IBOutlet weak var txtUsername: FUITextField!
+    @IBOutlet weak var txtPassword: FUITextField!
+    @IBOutlet weak var btnLogin:    FUIButton!
+    @IBOutlet weak var YCenterConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.imgLogo.image     = UIImage(named:"Logo")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.imgLogo.tintColor = UIColor.DCThemeColorMain()
+        
+        self.btnLogin.buttonColor  = UIColor.DCThemeColorMain()
+        self.btnLogin.shadowColor  = UIColor.DCThemeColorDarkMain()
+        self.btnLogin.shadowHeight = 3.0
+        self.btnLogin.cornerRadius = 6.0
+        self.btnLogin.setTitleColor(UIColor.whiteColor(), forState: .Normal)
 
-        // Do any additional setup after loading the view.
+        self.txtUsername.delegate = self
+        self.txtPassword.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func DoLogin(sender: AnyObject) {
+        
     }
-    */
+}
 
+extension LoginViewController:UITextFieldDelegate{
+    
 }
