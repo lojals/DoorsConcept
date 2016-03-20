@@ -309,9 +309,9 @@
 				7AE17F911C9C9F8A0018F260 /* Helpers */,
 				7AE17F921C9C9F8A0018F260 /* Entities */,
 				7AE17F401C9C64ED0018F260 /* AppDelegate.swift */,
-				7AE17F441C9C64ED0018F260 /* Main.storyboard */,
 				7AE17F4A1C9C64ED0018F260 /* Assets.xcassets */,
 				7AE17F4C1C9C64ED0018F260 /* LaunchScreen.storyboard */,
+				7AE17F441C9C64ED0018F260 /* Main.storyboard */,
 				7AE17F4F1C9C64ED0018F260 /* Info.plist */,
 				7AE17F471C9C64ED0018F260 /* DoorConcept.xcdatamodeld */,
 			);
