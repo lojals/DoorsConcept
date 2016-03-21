@@ -23,7 +23,7 @@
 		7A32C9B61CA064510081EBF4 /* Permision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9AE1CA064510081EBF4 /* Permision.swift */; };
 		7A32C9B71CA064510081EBF4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9AF1CA064510081EBF4 /* User+CoreDataProperties.swift */; };
 		7A32C9B81CA064510081EBF4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9B01CA064510081EBF4 /* User.swift */; };
-		7A32C9BA1CA06F040081EBF4 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9B91CA06F040081EBF4 /* LoginService.swift */; };
+		7A32C9BA1CA06F040081EBF4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9B91CA06F040081EBF4 /* UserService.swift */; };
 		7AE17F411C9C64ED0018F260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F401C9C64ED0018F260 /* AppDelegate.swift */; };
 		7AE17F461C9C64ED0018F260 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F441C9C64ED0018F260 /* Main.storyboard */; };
 		7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F471C9C64ED0018F260 /* DoorConcept.xcdatamodeld */; };
@@ -170,7 +170,7 @@
 		7A32C9AE1CA064510081EBF4 /* Permision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permision.swift; sourceTree = "<group>"; };
 		7A32C9AF1CA064510081EBF4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A32C9B01CA064510081EBF4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		7A32C9B91CA06F040081EBF4 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		7A32C9B91CA06F040081EBF4 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7AE17F3D1C9C64ED0018F260 /* DoorConcept.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorConcept.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE17F401C9C64ED0018F260 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AE17F451C9C64ED0018F260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -420,7 +420,7 @@
 			children = (
 				7AE17F891C9C94D70018F260 /* GenericTabBarViewController.swift */,
 				7AE17F971C9CA08B0018F260 /* GenericNavigationController.swift */,
-				7A32C9B91CA06F040081EBF4 /* LoginService.swift */,
+				7A32C9B91CA06F040081EBF4 /* UserService.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -917,7 +917,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AE180A61C9DD3D70018F260 /* LoginViewController.swift in Sources */,
-				7A32C9BA1CA06F040081EBF4 /* LoginService.swift in Sources */,
+				7A32C9BA1CA06F040081EBF4 /* UserService.swift in Sources */,
 				7AE180F31C9E0E5F0018F260 /* DoorDetailViewController.swift in Sources */,
 				7A32C9B71CA064510081EBF4 /* User+CoreDataProperties.swift in Sources */,
 				7A32C9B81CA064510081EBF4 /* User.swift in Sources */,

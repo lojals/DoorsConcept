@@ -18,8 +18,16 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.imgProfile.image     = UIImage(named:"user_0")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        self.imgProfile.tintColor = UIColor.DCThemeColorContrastMain()
+        let user = UserService.sharedInstance.currentUser! as User
+        
+        self.imgProfile.image       = UIImage(named:"user_\(user.userAvatar!)")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.imgProfile.tintColor   = UIColor.DCThemeColorContrastMain()
+
+        self.lblUsername.text       = user.userUsername!
+        
+        let df = NSDateFormatter()
+        df.dateFormat = "dd/MMM/YYYY"
+        self.lblLastLogin.text      = "Last login " + df.stringFromDate(UserService.sharedInstance.lastLogin())
         
         self.btnLogout.buttonColor  = UIColor.DCThemeColorMain()
         self.btnLogout.shadowColor  = UIColor.DCThemeColorDarkMain()
@@ -33,6 +41,8 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logout(sender: AnyObject) {
-        LoginService.sharedInstance.Logout()
+        UserService.sharedInstance.Logout()
+        let loginView = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController")
+        self.presentViewController(loginView!, animated: true, completion: nil)
     }
 }

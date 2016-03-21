@@ -14,12 +14,11 @@ typealias LoginCompletionHandler      = ((logged:Bool, error:String?)->Void)?
 typealias RetrievingCompletionHandler = ((error:String?)->Void)?
 
 
-class LoginService {
-    static let sharedInstance        = LoginService()// Singleton for a unique currentUser Instance
-    private var user                 = User()
-    private let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
-    func Login(username:String,password:String,completionHandler:LoginCompletionHandler){
+class UserService {
+    static let sharedInstance        = UserService()// Singleton for a unique currentUser Instance
+    private let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    var currentUser:User?            = nil
+        func Login(username:String,password:String,completionHandler:LoginCompletionHandler){
         
         let fetchRequest = NSFetchRequest(entityName: "User")
         fetchRequest.predicate = NSPredicate(format: "userUsername == %@ AND userPassword == %@", username, password)
@@ -27,8 +26,9 @@ class LoginService {
             let fetchResults = try managedObjectContext.executeRequest(fetchRequest) as! NSAsynchronousFetchResult
             let fetchUser    = fetchResults.finalResult as! [User]
             if fetchUser.count > 0 {
-                self.user = fetchUser[0]
-                NSUserDefaults.standardUserDefaults().setValue(self.user.userUsername, forKey: "UserSession")
+                currentUser = (fetchUser.first! as User)
+                NSUserDefaults.standardUserDefaults().setValue(self.currentUser!.userUsername!, forKey: "UserSession")
+                NSUserDefaults.standardUserDefaults().setValue(NSDate(), forKey: "lastLogin")
                 completionHandler!(logged: true,error: nil)
             }else{
                 completionHandler!(logged: false,error: "Wrong credentials!")
@@ -46,7 +46,7 @@ class LoginService {
             let fetchResults = try managedObjectContext.executeRequest(fetchRequest) as! NSAsynchronousFetchResult
             let fetchUser    = fetchResults.finalResult as! [User]
             if fetchUser.count > 0 {
-                self.user = fetchUser[0]
+                self.currentUser = fetchUser[0]
                 completion!(error: nil)
             }else{
                 completion!(error: "Session expired!")
@@ -67,5 +67,12 @@ class LoginService {
     
     func Logout(){
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "UserSession")
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "lastLogin")
+        print("Logged out")
+    }
+    
+    func lastLogin()->NSDate{
+        let date = NSUserDefaults.standardUserDefaults().valueForKey("lastLogin") as! NSDate
+        return date
     }
 }

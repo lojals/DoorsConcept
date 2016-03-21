@@ -27,7 +27,7 @@ class BuildingsTableViewController: UITableViewController {
 //        }catch{
 //            print("Some error inserting User")
 //        }
-        LoginService.sharedInstance.Login("Test.1", password: "123456") { (logged, error) -> Void in
+        UserService.sharedInstance.Login("Test.1", password: "123456") { (logged, error) -> Void in
             if logged{
                 print("Logged In")
             }else{
