@@ -85,11 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-DoorConcept/FlatUIKit.framework"
-  install_framework "Pods-DoorConcept/Ophiuchus.framework"
   install_framework "Pods-DoorConcept/SESlideTableViewCell.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-DoorConcept/FlatUIKit.framework"
-  install_framework "Pods-DoorConcept/Ophiuchus.framework"
   install_framework "Pods-DoorConcept/SESlideTableViewCell.framework"
 fi
