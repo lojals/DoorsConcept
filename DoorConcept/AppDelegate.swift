@@ -16,7 +16,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        UserService.sharedInstance.initializeData()
+        
+        self.window =  UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        
+        if UserService.sharedInstance.checkSession(){
+            print("Welcome back")
+            UserService.sharedInstance.retrieveSession({ (error) -> Void in
+                if error == nil{
+                    let buildings = story.instantiateViewControllerWithIdentifier("GenericTabBarViewController")
+                    self.window?.rootViewController = buildings
+                }else{
+                    print(error!)
+                }
+            })
+        }else{
+            print("Needs login")
+            let login = story.instantiateViewControllerWithIdentifier("LoginViewController")
+            self.window?.rootViewController = login
+        }
+        
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

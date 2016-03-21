@@ -69,5 +69,4 @@ extension AddBuildingsViewController:UITextFieldDelegate{
         textField.resignFirstResponder()
         return false
     }
-    
 }

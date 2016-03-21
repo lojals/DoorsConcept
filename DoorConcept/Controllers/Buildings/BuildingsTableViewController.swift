@@ -12,39 +12,19 @@ import CoreData
 
 class BuildingsTableViewController: UITableViewController {
 
-    
+    var buildings:[Building] = [Building]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        let newItem = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: managedObjectContext) as! User
-//        newItem.userUsername = "Test.3"
-//        newItem.userPassword = "123456"
-//        newItem.userAvatar   = "1"
-//        do{
-//            try managedObjectContext.save()
-//        }catch{
-//            print("Some error inserting User")
-//        }
-        UserService.sharedInstance.Login("Test.1", password: "123456") { (logged, error) -> Void in
-            if logged{
-                print("Logged In")
-            }else{
-                print(error!)
-            }
-        }
-        
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return buildings.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
