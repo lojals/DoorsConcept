@@ -271,7 +271,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_10.png" translatesAutoresizingMaskIntoConstraints="NO" id="k2t-0g-FCM">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k2t-0g-FCM">
                                             <rect key="frame" x="20" y="10" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="l7Z-nC-VNb"/>
@@ -610,7 +610,7 @@
         <!--Doors-->
         <scene sceneID="S2Q-0C-f20">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oKR-9G-FSL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oKR-9G-FSL" customClass="GenericNavigationController" customModule="DoorConcept" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Doors" image="door_icon.png" id="WWt-Cc-iLh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xEb-5r-2qB">
@@ -629,7 +629,7 @@
         <!--History-->
         <scene sceneID="JtN-L4-3qa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ts3-6T-xJB" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ts3-6T-xJB" customClass="GenericNavigationController" customModule="DoorConcept" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="History" image="history_icon.png" id="LSS-X6-P6I"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yWn-Kh-bMa">
@@ -651,10 +651,9 @@
         <image name="building_icon.png" width="28" height="25"/>
         <image name="door_icon.png" width="25" height="25"/>
         <image name="history_icon.png" width="21" height="25"/>
-        <image name="user_10.png" width="140" height="140"/>
         <image name="user_icon.png" width="24" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yhj-YK-kNZ"/>
+        <segue reference="g82-tq-FCC"/>
     </inferredMetricsTieBreakers>
 </document>

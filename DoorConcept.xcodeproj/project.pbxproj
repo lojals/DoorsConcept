@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		7A32C9841C9F9B480081EBF4 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9831C9F9B480081EBF4 /* HistoryTableViewController.swift */; };
 		7A32C9871C9F9B860081EBF4 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9861C9F9B860081EBF4 /* HistoryTableViewCell.swift */; };
+		7A32C9891C9FAF8A0081EBF4 /* DoorInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9881C9FAF8A0081EBF4 /* DoorInformation.swift */; };
+		7A32C98D1C9FB8950081EBF4 /* btn_open_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C98A1C9FB8950081EBF4 /* btn_open_icon.png */; };
+		7A32C98E1C9FB8950081EBF4 /* btn_open_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C98B1C9FB8950081EBF4 /* btn_open_icon@2x.png */; };
+		7A32C98F1C9FB8950081EBF4 /* btn_open_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C98C1C9FB8950081EBF4 /* btn_open_icon@3x.png */; };
+		7A32C9921C9FC0670081EBF4 /* GrantedUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9901C9FC0670081EBF4 /* GrantedUserTableViewCell.swift */; };
+		7A32C9931C9FC0670081EBF4 /* GrantedUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C9911C9FC0670081EBF4 /* GrantedUserTableViewCell.xib */; };
 		7AE17F411C9C64ED0018F260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F401C9C64ED0018F260 /* AppDelegate.swift */; };
 		7AE17F461C9C64ED0018F260 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F441C9C64ED0018F260 /* Main.storyboard */; };
 		7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F471C9C64ED0018F260 /* DoorConcept.xcdatamodeld */; };
@@ -141,6 +147,12 @@
 /* Begin PBXFileReference section */
 		7A32C9831C9F9B480081EBF4 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		7A32C9861C9F9B860081EBF4 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		7A32C9881C9FAF8A0081EBF4 /* DoorInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorInformation.swift; sourceTree = "<group>"; };
+		7A32C98A1C9FB8950081EBF4 /* btn_open_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_open_icon.png; sourceTree = "<group>"; };
+		7A32C98B1C9FB8950081EBF4 /* btn_open_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_open_icon@2x.png"; sourceTree = "<group>"; };
+		7A32C98C1C9FB8950081EBF4 /* btn_open_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_open_icon@3x.png"; sourceTree = "<group>"; };
+		7A32C9901C9FC0670081EBF4 /* GrantedUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrantedUserTableViewCell.swift; sourceTree = "<group>"; };
+		7A32C9911C9FC0670081EBF4 /* GrantedUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GrantedUserTableViewCell.xib; sourceTree = "<group>"; };
 		7AE17F3D1C9C64ED0018F260 /* DoorConcept.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorConcept.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE17F401C9C64ED0018F260 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AE17F451C9C64ED0018F260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -425,6 +437,7 @@
 				7AE17FFC1C9CD0D60018F260 /* DoorsTableViewController.swift */,
 				7AE180F21C9E0E5F0018F260 /* DoorDetailViewController.swift */,
 				7AE17FFE1C9CD20B0018F260 /* Custom Cell */,
+				7A32C9881C9FAF8A0081EBF4 /* DoorInformation.swift */,
 			);
 			path = Doors;
 			sourceTree = "<group>";
@@ -510,6 +523,8 @@
 			isa = PBXGroup;
 			children = (
 				7AE17FFF1C9CD20B0018F260 /* DoorsTableViewCell.swift */,
+				7A32C9901C9FC0670081EBF4 /* GrantedUserTableViewCell.swift */,
+				7A32C9911C9FC0670081EBF4 /* GrantedUserTableViewCell.xib */,
 			);
 			path = "Custom Cell";
 			sourceTree = "<group>";
@@ -539,6 +554,9 @@
 		7AE180971C9DCB450018F260 /* buttons */ = {
 			isa = PBXGroup;
 			children = (
+				7A32C98A1C9FB8950081EBF4 /* btn_open_icon.png */,
+				7A32C98B1C9FB8950081EBF4 /* btn_open_icon@2x.png */,
+				7A32C98C1C9FB8950081EBF4 /* btn_open_icon@3x.png */,
 				7AE180981C9DCB450018F260 /* btn_trash.png */,
 				7AE180991C9DCB450018F260 /* btn_trash@2x.png */,
 				7AE1809A1C9DCB450018F260 /* btn_trash@3x.png */,
@@ -719,6 +737,7 @@
 				7AE17F791C9C916F0018F260 /* history_icon@3x.png in Resources */,
 				7AE17FD61C9CB9210018F260 /* build_2@3x.png in Resources */,
 				7AE180911C9DC0330018F260 /* build_big_3.png in Resources */,
+				7A32C98D1C9FB8950081EBF4 /* btn_open_icon.png in Resources */,
 				7AE17F7C1C9C916F0018F260 /* user_icon@3x.png in Resources */,
 				7AE180E21C9E02B70018F260 /* user_5@2x.png in Resources */,
 				7AE180D81C9E02B70018F260 /* user_2.png in Resources */,
@@ -757,6 +776,7 @@
 				7AE180D91C9E02B70018F260 /* user_2@2x.png in Resources */,
 				7AE180EA1C9E02B70018F260 /* user_8.png in Resources */,
 				7AE17FF61C9CD0200018F260 /* door_3.png in Resources */,
+				7A32C9931C9FC0670081EBF4 /* GrantedUserTableViewCell.xib in Resources */,
 				7AE180E31C9E02B70018F260 /* user_5@3x.png in Resources */,
 				7AE180E81C9E02B70018F260 /* user_7@2x.png in Resources */,
 				7AE180CC1C9E02B70018F260 /* user_0.png in Resources */,
@@ -769,6 +789,7 @@
 				7AE17FF51C9CD0200018F260 /* door_2@3x.png in Resources */,
 				7AE1809D1C9DCB450018F260 /* btn_trash@3x.png in Resources */,
 				7AE180E91C9E02B70018F260 /* user_7@3x.png in Resources */,
+				7A32C98E1C9FB8950081EBF4 /* btn_open_icon@2x.png in Resources */,
 				7AE17F761C9C916F0018F260 /* door_icon@3x.png in Resources */,
 				7AE17FF41C9CD0200018F260 /* door_2@2x.png in Resources */,
 				7AE17FF81C9CD0200018F260 /* door_3@3x.png in Resources */,
@@ -798,6 +819,7 @@
 				7AE17FDC1C9CB9210018F260 /* build_4@3x.png in Resources */,
 				7AE180E51C9E02B70018F260 /* user_6@2x.png in Resources */,
 				7AE180951C9DC0330018F260 /* build_big_4@2x.png in Resources */,
+				7A32C98F1C9FB8950081EBF4 /* btn_open_icon@3x.png in Resources */,
 				7AE180D51C9E02B70018F260 /* user_11@3x.png in Resources */,
 				7AE180D21C9E02B70018F260 /* user_10@3x.png in Resources */,
 				7AE17FCF1C9CB9210018F260 /* build_0@2x.png in Resources */,
@@ -877,10 +899,12 @@
 				7AE17F8E1C9C96650018F260 /* AddBuildingsViewController.swift in Sources */,
 				7AE180F11C9E09270018F260 /* ProfileViewController.swift in Sources */,
 				7A32C9871C9F9B860081EBF4 /* HistoryTableViewCell.swift in Sources */,
+				7A32C9891C9FAF8A0081EBF4 /* DoorInformation.swift in Sources */,
 				7AE17F411C9C64ED0018F260 /* AppDelegate.swift in Sources */,
 				7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */,
 				7AE17FBC1C9CB5290018F260 /* BuildingsTableViewCell.swift in Sources */,
 				7AE17F901C9C989E0018F260 /* BuildingsTableViewController.swift in Sources */,
+				7A32C9921C9FC0670081EBF4 /* GrantedUserTableViewCell.swift in Sources */,
 				7AE17F981C9CA08B0018F260 /* GenericNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
