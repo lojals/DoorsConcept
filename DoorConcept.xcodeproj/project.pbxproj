@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A32C9841C9F9B480081EBF4 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9831C9F9B480081EBF4 /* HistoryTableViewController.swift */; };
+		7A32C9871C9F9B860081EBF4 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9861C9F9B860081EBF4 /* HistoryTableViewCell.swift */; };
 		7AE17F411C9C64ED0018F260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F401C9C64ED0018F260 /* AppDelegate.swift */; };
 		7AE17F461C9C64ED0018F260 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F441C9C64ED0018F260 /* Main.storyboard */; };
 		7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F471C9C64ED0018F260 /* DoorConcept.xcdatamodeld */; };
@@ -137,6 +139,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A32C9831C9F9B480081EBF4 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		7A32C9861C9F9B860081EBF4 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		7AE17F3D1C9C64ED0018F260 /* DoorConcept.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorConcept.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE17F401C9C64ED0018F260 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AE17F451C9C64ED0018F260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -281,6 +285,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A32C9851C9F9B860081EBF4 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7A32C9861C9F9B860081EBF4 /* HistoryTableViewCell.swift */,
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
 		7AE17F341C9C64ED0018F260 = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +413,8 @@
 		7AE17F861C9C94B60018F260 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				7A32C9851C9F9B860081EBF4 /* Custom Cell */,
+				7A32C9831C9F9B480081EBF4 /* HistoryTableViewController.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -409,8 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				7AE17FFC1C9CD0D60018F260 /* DoorsTableViewController.swift */,
-				7AE17FFE1C9CD20B0018F260 /* Custom Cell */,
 				7AE180F21C9E0E5F0018F260 /* DoorDetailViewController.swift */,
+				7AE17FFE1C9CD20B0018F260 /* Custom Cell */,
 			);
 			path = Doors;
 			sourceTree = "<group>";
@@ -857,10 +871,12 @@
 				7AE180F31C9E0E5F0018F260 /* DoorDetailViewController.swift in Sources */,
 				7AE17F8A1C9C94D70018F260 /* GenericTabBarViewController.swift in Sources */,
 				7AE17FFD1C9CD0D60018F260 /* DoorsTableViewController.swift in Sources */,
+				7A32C9841C9F9B480081EBF4 /* HistoryTableViewController.swift in Sources */,
 				7AE17F941C9C9FA40018F260 /* UIColorExtension.swift in Sources */,
 				7AE180001C9CD20B0018F260 /* DoorsTableViewCell.swift in Sources */,
 				7AE17F8E1C9C96650018F260 /* AddBuildingsViewController.swift in Sources */,
 				7AE180F11C9E09270018F260 /* ProfileViewController.swift in Sources */,
+				7A32C9871C9F9B860081EBF4 /* HistoryTableViewCell.swift in Sources */,
 				7AE17F411C9C64ED0018F260 /* AppDelegate.swift in Sources */,
 				7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */,
 				7AE17FBC1C9CB5290018F260 /* BuildingsTableViewCell.swift in Sources */,

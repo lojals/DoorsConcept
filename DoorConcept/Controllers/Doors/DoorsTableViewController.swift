@@ -39,6 +39,11 @@ class DoorsTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let doorDefault = DoorDetailViewController()
+        self.navigationController?.showViewController(doorDefault, sender: self)
+    }
 }
 
 
