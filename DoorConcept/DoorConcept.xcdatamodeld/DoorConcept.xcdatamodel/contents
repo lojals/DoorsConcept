@@ -1,44 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15B42" minimumToolsVersion="Automatic">
-    <entity name="Building" syncable="YES">
+    <entity name="Building" representedClassName=".Building" syncable="YES">
         <attribute name="buildingAvatar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="buildingCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="buildingName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="doors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Door" inverseName="building" inverseEntity="Door" syncable="YES"/>
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="buildings" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="Door" syncable="YES">
+    <entity name="Door" representedClassName=".Door" syncable="YES">
         <attribute name="doorAvatar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="doorCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="doorName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="doorState" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="building" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Building" inverseName="doors" inverseEntity="Building" syncable="YES"/>
-        <relationship name="history" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="History" syncable="YES"/>
         <relationship name="permission" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Permision" inverseName="door" inverseEntity="Permision" syncable="YES"/>
     </entity>
-    <entity name="History" syncable="YES">
+    <entity name="History" representedClassName=".History" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="door" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
     </entity>
-    <entity name="Permision" syncable="YES">
+    <entity name="Permision" representedClassName=".Permision" syncable="YES">
         <relationship name="door" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Door" inverseName="permission" inverseEntity="Door" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="premission" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="User" syncable="YES">
+    <entity name="User" representedClassName=".User" syncable="YES">
         <attribute name="userAvatar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userPassword" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userUsername" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="buildings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Building" inverseName="owner" inverseEntity="Building" syncable="YES"/>
-        <relationship name="history" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="History" syncable="YES"/>
         <relationship name="premission" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Permision" inverseName="user" inverseEntity="Permision" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-605" positionY="-109" width="128" height="133"/>
+        <element name="User" positionX="-605" positionY="-109" width="128" height="118"/>
         <element name="Building" positionX="-405" positionY="-225" width="128" height="118"/>
-        <element name="Door" positionX="-90" positionY="-144" width="128" height="148"/>
+        <element name="Door" positionX="-90" positionY="-144" width="128" height="133"/>
         <element name="Permision" positionX="-353" positionY="17" width="128" height="73"/>
-        <element name="History" positionX="-891" positionY="-220" width="128" height="103"/>
+        <element name="History" positionX="-891" positionY="-220" width="128" height="73"/>
     </elements>
 </model>

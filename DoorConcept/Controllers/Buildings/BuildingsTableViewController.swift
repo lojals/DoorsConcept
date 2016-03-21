@@ -8,15 +8,33 @@
 
 import UIKit
 import SESlideTableViewCell
+import CoreData
 
 class BuildingsTableViewController: UITableViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        
+        
+//        let newItem = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: managedObjectContext) as! User
+//        newItem.userUsername = "Test.3"
+//        newItem.userPassword = "123456"
+//        newItem.userAvatar   = "1"
+//        do{
+//            try managedObjectContext.save()
+//        }catch{
+//            print("Some error inserting User")
+//        }
+        LoginService.sharedInstance.Login("Test.1", password: "123456") { (logged, error) -> Void in
+            if logged{
+                print("Logged In")
+            }else{
+                print(error!)
+            }
+        }
+        
     }
 
     // MARK: - Table view data source

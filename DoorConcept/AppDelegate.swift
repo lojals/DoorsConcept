@@ -89,7 +89,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
+        
     }()
+    
+ 
 
     // MARK: - Core Data Saving support
 

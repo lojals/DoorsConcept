@@ -33,6 +33,6 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logout(sender: AnyObject) {
-        print("Logout")
+        LoginService.sharedInstance.Logout()
     }
 }

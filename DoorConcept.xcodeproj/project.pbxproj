@@ -15,6 +15,15 @@
 		7A32C98F1C9FB8950081EBF4 /* btn_open_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C98C1C9FB8950081EBF4 /* btn_open_icon@3x.png */; };
 		7A32C9921C9FC0670081EBF4 /* GrantedUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9901C9FC0670081EBF4 /* GrantedUserTableViewCell.swift */; };
 		7A32C9931C9FC0670081EBF4 /* GrantedUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C9911C9FC0670081EBF4 /* GrantedUserTableViewCell.xib */; };
+		7A32C9B11CA064510081EBF4 /* Building+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9A91CA064510081EBF4 /* Building+CoreDataProperties.swift */; };
+		7A32C9B21CA064510081EBF4 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9AA1CA064510081EBF4 /* Building.swift */; };
+		7A32C9B31CA064510081EBF4 /* Door+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9AB1CA064510081EBF4 /* Door+CoreDataProperties.swift */; };
+		7A32C9B41CA064510081EBF4 /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9AC1CA064510081EBF4 /* Door.swift */; };
+		7A32C9B51CA064510081EBF4 /* Permision+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9AD1CA064510081EBF4 /* Permision+CoreDataProperties.swift */; };
+		7A32C9B61CA064510081EBF4 /* Permision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9AE1CA064510081EBF4 /* Permision.swift */; };
+		7A32C9B71CA064510081EBF4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9AF1CA064510081EBF4 /* User+CoreDataProperties.swift */; };
+		7A32C9B81CA064510081EBF4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9B01CA064510081EBF4 /* User.swift */; };
+		7A32C9BA1CA06F040081EBF4 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9B91CA06F040081EBF4 /* LoginService.swift */; };
 		7AE17F411C9C64ED0018F260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F401C9C64ED0018F260 /* AppDelegate.swift */; };
 		7AE17F461C9C64ED0018F260 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F441C9C64ED0018F260 /* Main.storyboard */; };
 		7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F471C9C64ED0018F260 /* DoorConcept.xcdatamodeld */; };
@@ -153,6 +162,15 @@
 		7A32C98C1C9FB8950081EBF4 /* btn_open_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_open_icon@3x.png"; sourceTree = "<group>"; };
 		7A32C9901C9FC0670081EBF4 /* GrantedUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrantedUserTableViewCell.swift; sourceTree = "<group>"; };
 		7A32C9911C9FC0670081EBF4 /* GrantedUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GrantedUserTableViewCell.xib; sourceTree = "<group>"; };
+		7A32C9A91CA064510081EBF4 /* Building+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Building+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A32C9AA1CA064510081EBF4 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		7A32C9AB1CA064510081EBF4 /* Door+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Door+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A32C9AC1CA064510081EBF4 /* Door.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
+		7A32C9AD1CA064510081EBF4 /* Permision+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Permision+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A32C9AE1CA064510081EBF4 /* Permision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permision.swift; sourceTree = "<group>"; };
+		7A32C9AF1CA064510081EBF4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A32C9B01CA064510081EBF4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7A32C9B91CA06F040081EBF4 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		7AE17F3D1C9C64ED0018F260 /* DoorConcept.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorConcept.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE17F401C9C64ED0018F260 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AE17F451C9C64ED0018F260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -402,6 +420,7 @@
 			children = (
 				7AE17F891C9C94D70018F260 /* GenericTabBarViewController.swift */,
 				7AE17F971C9CA08B0018F260 /* GenericNavigationController.swift */,
+				7A32C9B91CA06F040081EBF4 /* LoginService.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -463,6 +482,14 @@
 		7AE17F921C9C9F8A0018F260 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				7A32C9A91CA064510081EBF4 /* Building+CoreDataProperties.swift */,
+				7A32C9AA1CA064510081EBF4 /* Building.swift */,
+				7A32C9AB1CA064510081EBF4 /* Door+CoreDataProperties.swift */,
+				7A32C9AC1CA064510081EBF4 /* Door.swift */,
+				7A32C9AD1CA064510081EBF4 /* Permision+CoreDataProperties.swift */,
+				7A32C9AE1CA064510081EBF4 /* Permision.swift */,
+				7A32C9AF1CA064510081EBF4 /* User+CoreDataProperties.swift */,
+				7A32C9B01CA064510081EBF4 /* User.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -890,18 +917,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AE180A61C9DD3D70018F260 /* LoginViewController.swift in Sources */,
+				7A32C9BA1CA06F040081EBF4 /* LoginService.swift in Sources */,
 				7AE180F31C9E0E5F0018F260 /* DoorDetailViewController.swift in Sources */,
+				7A32C9B71CA064510081EBF4 /* User+CoreDataProperties.swift in Sources */,
+				7A32C9B81CA064510081EBF4 /* User.swift in Sources */,
+				7A32C9B51CA064510081EBF4 /* Permision+CoreDataProperties.swift in Sources */,
 				7AE17F8A1C9C94D70018F260 /* GenericTabBarViewController.swift in Sources */,
 				7AE17FFD1C9CD0D60018F260 /* DoorsTableViewController.swift in Sources */,
 				7A32C9841C9F9B480081EBF4 /* HistoryTableViewController.swift in Sources */,
 				7AE17F941C9C9FA40018F260 /* UIColorExtension.swift in Sources */,
 				7AE180001C9CD20B0018F260 /* DoorsTableViewCell.swift in Sources */,
+				7A32C9B31CA064510081EBF4 /* Door+CoreDataProperties.swift in Sources */,
 				7AE17F8E1C9C96650018F260 /* AddBuildingsViewController.swift in Sources */,
+				7A32C9B21CA064510081EBF4 /* Building.swift in Sources */,
 				7AE180F11C9E09270018F260 /* ProfileViewController.swift in Sources */,
+				7A32C9B61CA064510081EBF4 /* Permision.swift in Sources */,
 				7A32C9871C9F9B860081EBF4 /* HistoryTableViewCell.swift in Sources */,
 				7A32C9891C9FAF8A0081EBF4 /* DoorInformation.swift in Sources */,
 				7AE17F411C9C64ED0018F260 /* AppDelegate.swift in Sources */,
 				7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */,
+				7A32C9B11CA064510081EBF4 /* Building+CoreDataProperties.swift in Sources */,
+				7A32C9B41CA064510081EBF4 /* Door.swift in Sources */,
 				7AE17FBC1C9CB5290018F260 /* BuildingsTableViewCell.swift in Sources */,
 				7AE17F901C9C989E0018F260 /* BuildingsTableViewController.swift in Sources */,
 				7A32C9921C9FC0670081EBF4 /* GrantedUserTableViewCell.swift in Sources */,
