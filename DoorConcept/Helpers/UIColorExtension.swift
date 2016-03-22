@@ -37,8 +37,5 @@ extension UIColor{
      */
     class func DCThemeColorContrastMain() -> UIColor {
         return UIColor(red:0.18, green:0.18, blue:0.18, alpha:1)
-    }
-    
-    
-    
+    }    
 }

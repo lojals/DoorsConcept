@@ -15,6 +15,11 @@ class HistoryInteractor {
     
     init(){}
     
+    /**
+     Method to retrieve History for a User, check wether the current user owns the Building or not.
+     
+     - parameter completion: completion description (data = [History], error = error description)
+     */
     func getHistory(completion:FetchCompletionHandler){
         let fetchRequest = NSFetchRequest(entityName: "History")
         fetchRequest.predicate = NSPredicate(format: "user == %@ OR door.building IN %@", UserService.sharedInstance.currentUser!, UserService.sharedInstance.currentUser!.buildings!)
@@ -27,20 +32,23 @@ class HistoryInteractor {
         }
     }
     
+    /**
+     Method to save History on CoreData, from user/door. An user attempt to open a door
+     
+     - parameter door:  Door datatype to be added to the History
+     - parameter user:  User datatype to be added to the History
+     - parameter state: Transaction's state, passible (authorized/denied)
+     */
     func saveHistory(door:Door, user:User, state:String){
         let history = NSEntityDescription.insertNewObjectForEntityForName("History", inManagedObjectContext: managedObjectContext) as! History
         history.door  = door
         history.user  = user
         history.state = state
         history.date  = NSDate()
-        
-        print(history.date)
-        
         do{
             try managedObjectContext.save()
         }catch{
             print("Some error inserting Door")
         }
     }
-    
 }

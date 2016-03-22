@@ -16,6 +16,11 @@ class HistoryTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
+    /**
+     After View loaded, historyInteractor retrieve the history for User
+     
+     - parameter animated: default
+     */
     override func viewWillAppear(animated: Bool) {
         historyInteractor.getHistory { (data, error) -> Void in
             if error == nil{

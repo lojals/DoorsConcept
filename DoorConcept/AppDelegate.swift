@@ -14,7 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    /**
+     initialize data if is not in the db, choose the correct initial view depending on the session state.
+     
+     - parameter application:   application
+     - parameter launchOptions: options
+     
+     - returns: finished (?)
+     */
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UserService.sharedInstance.initializeData()
         

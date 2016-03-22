@@ -4,6 +4,7 @@ use_frameworks!
 target 'DoorConcept' do
 pod 'SESlideTableViewCell'
 pod 'FlatUIKit'
+pod 'DZNEmptyDataSet'
 end
 
 target 'DoorConceptTests' do

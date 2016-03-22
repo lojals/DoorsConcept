@@ -8,6 +8,7 @@
 
 import UIKit
 import SESlideTableViewCell
+import DZNEmptyDataSet
 
 class DoorsTableViewController: UITableViewController {
 
@@ -16,10 +17,18 @@ class DoorsTableViewController: UITableViewController {
     var doors:[Door] = [Door]()
     var building:Building!
     
+    override func viewDidLoad() {
+        self.tableView.emptyDataSetDelegate = self
+        self.tableView.emptyDataSetSource   = self
+    }
+    
     override func viewWillAppear(animated: Bool) {
         loadDoors()
     }
     
+    /**
+     Check if the actual instance contains a building (Detail view), and then load the buildings
+     */
     func loadDoors(){
         if building != nil{
             doorInteractor.getDoorsByBuilding(building) { (data, error) -> Void in
@@ -50,6 +59,11 @@ class DoorsTableViewController: UITableViewController {
         }
     }
 
+    /**
+     redirect to AddDoorsViewController
+     
+     - parameter sender: event sender => UIButton
+     */
     @IBAction func AddDoor(sender: AnyObject) {
         let addDoorView      = self.storyboard?.instantiateViewControllerWithIdentifier("AddDoorsViewController") as! AddDoorsViewController
         addDoorView.building = self.building
@@ -82,9 +96,43 @@ class DoorsTableViewController: UITableViewController {
 }
 
 
+// MARK: - SESlideTableViewCellDelegate
+// Handle the delete event (dragging left on the cells)
 extension DoorsTableViewController:SESlideTableViewCellDelegate{
     func slideTableViewCell(cell: SESlideTableViewCell!, didTriggerRightButton buttonIndex: Int) {
         doorInteractor.deleteDoor(doors[cell.tag])
         self.loadDoors()
+    }
+}
+
+// MARK: - DZNEmptyDataSetSource,DZNEmptyDataSetDelegate
+// Style for empty state
+extension DoorsTableViewController:DZNEmptyDataSetSource,DZNEmptyDataSetDelegate{
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "empty_doors")
+    }
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Oops!!"
+        let infoStr       = NSMutableAttributedString(string: str)
+        infoStr.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(18, weight: 0.7), range: NSMakeRange(0, str.characters.count))
+        infoStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.DCThemeColorMain(), range: NSMakeRange(0, str.characters.count))
+        return infoStr as NSAttributedString
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "There’s no doors yet, add a new one\nclicking in the + button, only if you're the building's owner."
+        let infoStr       = NSMutableAttributedString(string: str)
+        infoStr.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(14, weight: 0.1), range: NSMakeRange(0, str.characters.count))
+        infoStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.DCThemeColorMain(), range: NSMakeRange(0, str.characters.count))
+        return infoStr as NSAttributedString
+    }
+    
+    func backgroundColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.whiteColor()
+    }
+    
+    func emptyDataSetShouldFadeIn(scrollView: UIScrollView!) -> Bool {
+        return true
     }
 }

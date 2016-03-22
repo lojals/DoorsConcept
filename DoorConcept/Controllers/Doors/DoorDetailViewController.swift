@@ -24,6 +24,9 @@ class DoorDetailViewController: UIViewController {
     var door:Door!
     var permissions:[Permision] = [Permision]()
     
+    /**
+     Check if current user is owner of the door, then add the UIComponents and Contraints
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,11 +46,13 @@ class DoorDetailViewController: UIViewController {
         self.loadPermissions()
     }
     
-    func loadPermissions(){
+    /**
+     Load the current door permissions, to show if current user is owner
+     */
+    private func loadPermissions(){
         doorInteractor.getPermissionsByDoor(door) { (data, error) -> Void in
             if error == nil {
                 self.permissions = data as! [Permision]
-                
                 self.tblGrantedUsers.reloadData()
             }else{
                 print(error!)
@@ -55,7 +60,7 @@ class DoorDetailViewController: UIViewController {
         }
     }
     
-    func addUIComponents(){
+    private func addUIComponents(){
         progress                   = UIProgressView()
         progress.trackTintColor    = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1)
         progress.progressTintColor = UIColor.DCThemeColorMain()
@@ -97,7 +102,10 @@ class DoorDetailViewController: UIViewController {
         }
     }
 
-    func addUIConstraints(){
+    /**
+     Add UIConstraint and handle different constraints if user is owner or not.
+     */
+    private func addUIConstraints(){
         let views = ["progress":progress,"bigContainer":bigContainer,"informationContainer":informationContainer,"btnOpen":btnOpen,"tblGrantedUsers":tblGrantedUsers]
         
         self.view.addConstraint(NSLayoutConstraint(item: self.progress, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .TopMargin, multiplier: 1, constant: 0))
@@ -119,18 +127,24 @@ class DoorDetailViewController: UIViewController {
         
     }
     
+    /**
+     Send to the fake server the intension to open the current door
+     */
     func openDoor(){
         btnOpen.enabled = false
-        
-        let doorServer = DoorServerSimulator(responseDelegate: self)
+        let doorServer  = DoorServerSimulator(responseDelegate: self)
         doorServer.openDoor(door, user: UserService.sharedInstance.currentUser!)
-        
         UIView.animateWithDuration(2, animations: { () -> Void in
             self.progress.progress = 1
             self.progress.layoutIfNeeded()
         })
     }
     
+    /**
+     Set different states to the UI
+     
+     - parameter status: Valid DoorTransacStatus
+     */
     func setTransacStatus(status:DoorTransacStatus){
         switch(status){
             case .Authorized: informationContainer.setTransacStatus(.Authorized)
@@ -144,7 +158,14 @@ class DoorDetailViewController: UIViewController {
     }
 }
 
+// MARK: - DoorServerSimulatorResponse
 extension DoorDetailViewController:DoorServerSimulatorResponse{
+    
+    /**
+     Response from the fake server, it contains the transaction status.
+     
+     - parameter opened: door Opened (?)
+     */
     func doorServerOpenedDoor(opened: Bool) {
         if opened{
             self.setTransacStatus(.Authorized)
@@ -153,6 +174,9 @@ extension DoorDetailViewController:DoorServerSimulatorResponse{
         }
     }
     
+    /**
+     After closed response is received, ready state is loaded in the UI.
+     */
     func doorJustClosed() {
         btnOpen.enabled = true
         self.setTransacStatus(.Ready)
@@ -160,7 +184,7 @@ extension DoorDetailViewController:DoorServerSimulatorResponse{
     }
 }
 
-
+// MARK: - UITableViewDelegate,UITableViewDataSource
 extension DoorDetailViewController:UITableViewDelegate,UITableViewDataSource{
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -206,6 +230,9 @@ extension DoorDetailViewController:UITableViewDelegate,UITableViewDataSource{
         return 81
     }
     
+    /**
+     Display an UIAlertController asking the username for permission.
+     */
     func grantUser(){
         let alertVC : UIAlertController = UIAlertController(title: "Give some permission!", message: "Type the username you want to give access to this door!", preferredStyle: UIAlertControllerStyle.Alert)
         alertVC.addTextFieldWithConfigurationHandler { (textfield) -> Void in
@@ -215,7 +242,6 @@ extension DoorDetailViewController:UITableViewDelegate,UITableViewDataSource{
             if let textField = alertVC.textFields?.first{
                 self.doorInteractor.givePermission(textField.text!, door: self.door, completion: { (error) -> Void in
                     if error == nil {
-                        print(error)
                         self.loadPermissions()
                     }else{
                         print(error!)

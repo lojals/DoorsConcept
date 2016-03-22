@@ -22,27 +22,38 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.imgLogo.image     = UIImage(named:"Logo")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        self.imgLogo.tintColor = UIColor.DCThemeColorMain()
-        
+        self.imgLogo.image         = UIImage(named:"Logo")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.imgLogo.tintColor     = UIColor.DCThemeColorMain()
+
         self.btnLogin.buttonColor  = UIColor.DCThemeColorMain()
         self.btnLogin.shadowColor  = UIColor.DCThemeColorDarkMain()
         self.btnLogin.shadowHeight = 3.0
         self.btnLogin.cornerRadius = 6.0
         self.btnLogin.setTitleColor(UIColor.whiteColor(), forState: .Normal)
 
-        self.txtUsername.delegate = self
-        self.txtUsername.tag      = 0
-        
-        self.txtPassword.delegate = self
-        self.txtPassword.tag      = 1
+        self.txtUsername.delegate  = self
+        self.txtUsername.tag       = 0
+
+        self.txtPassword.delegate  = self
+        self.txtPassword.tag       = 1
     }
 
+    /**
+     Method to hide keyboard if is active
+     
+     - parameter touches: Touches on the screen
+     - parameter event:   Touch event
+     */
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         txtUsername.resignFirstResponder()
         txtPassword.resignFirstResponder()
     }
     
+    /**
+     Method to do Login, and check Username/Password in the local DB
+     
+     - parameter sender: Button touched
+     */
     @IBAction func DoLogin(sender: AnyObject) {
         UserService.sharedInstance.Login(self.txtUsername.text!, password: self.txtPassword.text!) { (logged, error) -> Void in
             if logged{
@@ -50,7 +61,6 @@ class LoginViewController: UIViewController {
                 let buildings = self.storyboard?.instantiateViewControllerWithIdentifier("GenericTabBarViewController")
                 self.presentViewController(buildings!, animated: true, completion: nil)
             }else{
-                print(error!)
                 let alert : UIAlertController = UIAlertController(title: "Oops!", message: error!, preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style:.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
@@ -59,6 +69,7 @@ class LoginViewController: UIViewController {
     }
 }
 
+// MARK: - Extension to manage the UITextField delegate
 extension LoginViewController:UITextFieldDelegate{
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {

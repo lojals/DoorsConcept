@@ -11,10 +11,11 @@ import FlatUIKit
 
 class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var imgProfile: UIImageView!
-    @IBOutlet weak var lblUsername: UILabel!
+    @IBOutlet weak var imgProfile:   UIImageView!
+    @IBOutlet weak var lblUsername:  UILabel!
     @IBOutlet weak var lblLastLogin: UILabel!
-    @IBOutlet weak var btnLogout: FUIButton!
+    @IBOutlet weak var btnLogout:    FUIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,22 +25,23 @@ class ProfileViewController: UIViewController {
         self.imgProfile.tintColor   = UIColor.DCThemeColorContrastMain()
 
         self.lblUsername.text       = user.userUsername!
-        
-        let df = NSDateFormatter()
-        df.dateFormat = "dd/MMM/YYYY"
+
+        let df                      = NSDateFormatter()
+        df.dateFormat               = "dd/MMM/YYYY"
         self.lblLastLogin.text      = "Last login " + df.stringFromDate(UserService.sharedInstance.lastLogin())
-        
+
         self.btnLogout.buttonColor  = UIColor.DCThemeColorMain()
         self.btnLogout.shadowColor  = UIColor.DCThemeColorDarkMain()
         self.btnLogout.shadowHeight = 3.0
         self.btnLogout.cornerRadius = 6.0
         self.btnLogout.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
+    /**
+     Method to kill the session, and redirect to LoginViewController
+     
+     - parameter sender: UIButton sender
+     */
     @IBAction func logout(sender: AnyObject) {
         UserService.sharedInstance.Logout()
         let loginView = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController")

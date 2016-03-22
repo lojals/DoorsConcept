@@ -14,10 +14,13 @@ typealias FetchCompletionHandler = ((data:[AnyObject]?,error:String?)->Void)?
 class BuildingsInteractor {
     private let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
-    init(){
+    init(){}
     
-    }
-    
+    /**
+     Retrieve all the buildings created. TODO: Retrieve just the permited by the current user.
+     
+     - parameter completion: completion description (data = [Building], error = error description)
+     */
     func getBuildings(completion:FetchCompletionHandler){
         let fetchRequest = NSFetchRequest(entityName: "Building")
         do{
@@ -29,6 +32,13 @@ class BuildingsInteractor {
         }
     }
     
+    /**
+     Add a new Building
+     
+     - parameter user:   user adding the Building
+     - parameter name:   Building name
+     - parameter avatar: Avatar image name index (0-4) (building_[index].png)
+     */
     func saveBuilding(user:User, name:String, avatar:String){
         let build1               = NSEntityDescription.insertNewObjectForEntityForName("Building", inManagedObjectContext: managedObjectContext) as! Building
         build1.owner             = user
@@ -43,4 +53,22 @@ class BuildingsInteractor {
         }
     }
     
+    /**
+     Delete building from the db
+     
+     - parameter building: valid building
+     */
+    func deleteBuilding(building:Building){
+        if UserService.sharedInstance.currentUser! == building.owner!{
+            managedObjectContext.deleteObject(building)
+            do{
+                try managedObjectContext.save()
+            }catch{
+                print("Some error deleting Door")
+            }
+        }else{
+            //Not yet implemented un UI
+            print("That's not your building")
+        }
+    }
 }

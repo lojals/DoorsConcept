@@ -61,6 +61,11 @@ class DoorInformation: UIView {
         self.addConstraint(NSLayoutConstraint(item: self.lblStatus, attribute: .Left, relatedBy: .Equal, toItem: line, attribute: .Left, multiplier: 1, constant: 0))
     }
 
+    /**
+     Modify the UI according the transaction status
+     
+     - parameter status: Valid DoorTransacStatus
+     */
     func setTransacStatus(status:DoorTransacStatus){
         switch(status){
         case .Authorized: lblStatus.text = DoorTransacStatus.Authorized.rawValue.uppercaseString

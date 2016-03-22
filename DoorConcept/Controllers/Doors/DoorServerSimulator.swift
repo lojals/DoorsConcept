@@ -21,10 +21,15 @@ class DoorServerSimulator: NSObject{
         super.init()
     }
     
+    /**
+     Check with the interactor if user has enough permissions to access to an specific door
+     
+     - parameter door: valid door
+     - parameter user: valid user
+     */
     func openDoor(door:Door, user:User){
         doorInteractor.checkPermission(user, door: door) { (data, error) -> Void in
             if error != nil{
-                print("error")
                 let _ = NSTimer.scheduledTimerWithTimeInterval(1.7, target: self, selector: Selector("sendResponseDenied"), userInfo: nil, repeats: false)
             }else{
                 let _ = NSTimer.scheduledTimerWithTimeInterval(1.7, target: self, selector: Selector("sendResponseAccessed"), userInfo: nil, repeats: false)
@@ -32,16 +37,25 @@ class DoorServerSimulator: NSObject{
         }
     }
     
+    /**
+     Fake server send a denied response, after 1.5 is ready to accept new petitions.
+     */
     func sendResponseDenied(){
         responseDelegate?.doorServerOpenedDoor(false)
-        let _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("doorIsClosed"), userInfo: nil, repeats: false)
+        let _ = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: Selector("doorIsClosed"), userInfo: nil, repeats: false)
     }
     
+    /**
+     Fake server send a Accessed response, after 3 seconds the door is closed and can to accept new petitions.
+     */
     func sendResponseAccessed(){
         responseDelegate?.doorServerOpenedDoor(true)
         let _ = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: Selector("doorIsClosed"), userInfo: nil, repeats: false)
     }
     
+    /**
+     The door is closed and sent as response.
+     */
     func doorIsClosed(){
         responseDelegate?.doorJustClosed()
     }

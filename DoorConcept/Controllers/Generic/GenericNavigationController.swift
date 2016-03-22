@@ -11,14 +11,12 @@ import FlatUIKit
 
 class GenericNavigationController: UINavigationController {
 
+    /**
+     Solid background on navigation Bar and main color tint color.
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationBar.configureFlatNavigationBarWithColor(UIColor.DCThemeColorContrastMain())
         self.navigationBar.translucent = false
         self.navigationBar.tintColor = UIColor.DCThemeColorMain()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }

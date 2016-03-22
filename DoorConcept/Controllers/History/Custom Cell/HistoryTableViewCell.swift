@@ -20,6 +20,11 @@ class HistoryTableViewCell: SESlideTableViewCell {
         super.awakeFromNib()
     }
     
+    /**
+     Method to fill the cell data with the history data
+     
+     - parameter history: valid History object
+     */
     func configureCellWithHistory(history:History){
         self.imgHistory?.image    = UIImage(named: "user_" + history.user!.userAvatar!)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         self.imgHistory.tintColor = UIColor.darkGrayColor()
@@ -36,7 +41,7 @@ class HistoryTableViewCell: SESlideTableViewCell {
         
         let fst = history.user!.userUsername!
         let snd = (history.door?.doorName) ?? "Deleted door"
-        let trd = (history.door?.building?.buildingName) ?? "Deleted door"
+        let trd = (history.door?.building?.buildingName) ?? "Building"
         let infoStr       = NSMutableAttributedString(string: fst + st + snd + " @ " + trd)
         
         //String metrics

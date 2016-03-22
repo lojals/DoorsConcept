@@ -10,13 +10,12 @@ import UIKit
 
 class GenericTabBarViewController: UITabBarController {
 
+    /**
+     Solid background on tabBar and main color tint color.
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.tintColor = UIColor.DCThemeColorMain()
         self.tabBar.translucent = false
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }
