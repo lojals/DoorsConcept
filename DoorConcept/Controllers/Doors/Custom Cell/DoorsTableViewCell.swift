@@ -32,5 +32,11 @@ class DoorsTableViewCell: SESlideTableViewCell {
             self.lblSubtitle.textColor = UIColor.darkGrayColor()
         }
     }
+    
+    func configureCellWithDoor(door:Door){
+        self.imgDoor?.image   = UIImage(named: "door_" + door.doorAvatar!)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.lblTitle.text    = door.doorName!
+        self.lblSubtitle.text = "\(door.doorState!)"
+    }
 
 }

@@ -9,19 +9,20 @@
 import UIKit
 import FlatUIKit
 
-class AddBuildingsViewController: UIViewController {
-    let buildingInteractor = BuildingsInteractor()
+class AddDoorsViewController: UIViewController {
+    let doorInteractor = DoorsInteractor()
     
     @IBOutlet weak var yCenterConstraint: NSLayoutConstraint!
-    @IBOutlet weak var imgBuilding: UIImageView!
-    @IBOutlet weak var txtBuildingName: UITextField!
+    @IBOutlet weak var imgDoors: UIImageView!
+    @IBOutlet weak var txtDoorName: UITextField!
     @IBOutlet weak var btnAdd: FUIButton!
+    var building:Building!
     
     let randAvatar = Int(arc4random_uniform(UInt32(5)))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Add Building"
+        self.title = "Add Door"
         
         btnAdd.buttonColor = UIColor.DCThemeColorMain()
         btnAdd.shadowColor = UIColor.DCThemeColorDarkMain()
@@ -29,25 +30,25 @@ class AddBuildingsViewController: UIViewController {
         btnAdd.cornerRadius = 6.0
         btnAdd.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         
-        txtBuildingName.delegate = self
+        txtDoorName.delegate = self
         
-        self.imgBuilding.image = UIImage(named: "build_big_\(randAvatar)")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        self.imgBuilding.contentMode = .ScaleAspectFit
-        self.imgBuilding.tintColor = UIColor.grayColor()
+        self.imgDoors.image = UIImage(named: "door_\(randAvatar)")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.imgDoors.contentMode = .ScaleAspectFit
+        self.imgDoors.tintColor = UIColor.grayColor()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        txtBuildingName.resignFirstResponder()
+        txtDoorName.resignFirstResponder()
     }
     
-    @IBAction func addBuilding(sender: AnyObject) {
-        buildingInteractor.saveBuilding(UserService.sharedInstance.currentUser!, name: txtBuildingName.text!, avatar: "\(randAvatar)")
+    @IBAction func addDoor(sender: AnyObject) {
+        doorInteractor.saveDoor(building, name: txtDoorName.text!, avatar: "\(randAvatar)")
         self.navigationController?.popViewControllerAnimated(true)
     }
 }
 
 
-extension AddBuildingsViewController:UITextFieldDelegate{
+extension AddDoorsViewController:UITextFieldDelegate{
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         self.yCenterConstraint.constant = -100

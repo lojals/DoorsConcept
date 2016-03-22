@@ -113,6 +113,12 @@ class UserService {
             user1.userPassword = "123456"
             user1.userAvatar   = "0"
             
+            let build1               = NSEntityDescription.insertNewObjectForEntityForName("Building", inManagedObjectContext: managedObjectContext) as! Building
+            build1.owner             = user1
+            build1.buildingName      = "Clay Solutions"
+            build1.buildingAvatar    = "1"
+            build1.buildingCreatedAt = NSDate()
+            
             let user2 = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: managedObjectContext) as! User
             user2.userUsername = "Test.2"
             user2.userPassword = "123456"

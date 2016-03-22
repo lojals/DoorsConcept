@@ -11,12 +11,53 @@ import SESlideTableViewCell
 
 class DoorsTableViewController: UITableViewController {
 
+    @IBOutlet weak var btnAdd: UIBarButtonItem!
+    let doorInteractor = DoorsInteractor()
+    var doors:[Door] = [Door]()
+    var building:Building!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if building != nil{
+            doorInteractor.getDoorsByBuilding(building) { (data, error) -> Void in
+                if error == nil{
+                    self.doors = data as! [Door]
+                    self.tableView.reloadData()
+                }else{
+                    print(error)
+                }
+            }
+            
+            if building.owner == UserService.sharedInstance.currentUser{
+                btnAdd.enabled = true
+            }else{
+                btnAdd.enabled = false
+            }
+            
+        }else{
+            doorInteractor.getDoors({ (data, error) -> Void in
+                if error == nil{
+                    self.doors = data as! [Door]
+                    self.tableView.reloadData()
+                }else{
+                    print(error)
+                }
+            })
+        }
+    }
+
+    @IBAction func AddDoor(sender: AnyObject) {
+        let addDoorView      = self.storyboard?.instantiateViewControllerWithIdentifier("AddDoorsViewController") as! AddDoorsViewController
+        addDoorView.building = self.building
+        self.navigationController?.pushViewController(addDoorView, animated: true)
     }
 
     // MARK: - Table view data source
@@ -26,22 +67,20 @@ class DoorsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.doors.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell               = tableView.dequeueReusableCellWithIdentifier("DoorCell", forIndexPath: indexPath) as! DoorsTableViewCell
-        if (!cell.isEqual(nil)){
-            cell.delegate          = self
-            cell.tag               = indexPath.row
-            cell.imgDoor.image = UIImage(named: "door_\(Int(arc4random_uniform(UInt32(5))))")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        }
-        
+        let cell      = tableView.dequeueReusableCellWithIdentifier("DoorCell", forIndexPath: indexPath) as! DoorsTableViewCell
+        cell.delegate = self
+        cell.tag      = indexPath.row
+        cell.configureCellWithDoor(doors[indexPath.row])
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let doorDefault = DoorDetailViewController()
+        let doorDefault  = DoorDetailViewController()
+        doorDefault.door = doors[indexPath.row]
         self.navigationController?.showViewController(doorDefault, sender: self)
     }
 }

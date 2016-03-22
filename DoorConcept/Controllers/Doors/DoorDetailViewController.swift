@@ -19,13 +19,21 @@ class DoorDetailViewController: UIViewController {
     var informationContainer:DoorInformation!
     var bigContainer:UIView!
     
-    let hasTable:Bool = false
-    
+    var isOwner:Bool = false
+    var door:Door!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Door super cool"
+        
+        if door.building?.owner == UserService.sharedInstance.currentUser{
+            isOwner = true
+        }else{
+            isOwner = false
+        }
+        
+        self.title = door.doorName!
         self.view.backgroundColor = UIColor.whiteColor()
+        
         self.addUIComponents()
         self.addUIConstraints()
     }
@@ -37,7 +45,6 @@ class DoorDetailViewController: UIViewController {
         progress.progress          = 0.0
         progress.translatesAutoresizingMaskIntoConstraints =  false
         self.view.addSubview(progress)
-        
         
         bigContainer = UIView()
         bigContainer.translatesAutoresizingMaskIntoConstraints = false
@@ -61,7 +68,7 @@ class DoorDetailViewController: UIViewController {
         
         tblGrantedUsers = UITableView()
         
-        if hasTable{
+        if isOwner{
             tblGrantedUsers.delegate        = self
             tblGrantedUsers.dataSource      = self
             tblGrantedUsers.separatorColor  = UIColor.DCThemeColorMain()
@@ -77,7 +84,7 @@ class DoorDetailViewController: UIViewController {
         
         self.view.addConstraint(NSLayoutConstraint(item: self.progress, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .TopMargin, multiplier: 1, constant: 0))
         
-        if hasTable{
+        if isOwner{
             self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[progress(7)][bigContainer(141)][btnOpen(72)][tblGrantedUsers]|", options:  NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
             self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[tblGrantedUsers]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         }else{

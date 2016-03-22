@@ -32,5 +32,10 @@ class BuildingsTableViewCell: SESlideTableViewCell {
             self.lblSubtitle.textColor = UIColor.darkGrayColor()
         }
     }
-
+    
+    func configureCellWithBuilding(building:Building){
+        self.imgBuilding?.image = UIImage(named: "build_" + building.buildingAvatar!)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.lblTitle.text      = building.buildingName!
+        self.lblSubtitle.text   = "\(building.doors?.count ?? 0 ) Doors"
+    }
 }

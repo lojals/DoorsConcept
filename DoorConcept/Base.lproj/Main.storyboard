@@ -252,6 +252,67 @@
             </objects>
             <point key="canvasLocation" x="600" y="2833"/>
         </scene>
+        <!--Add Doors View Controller-->
+        <scene sceneID="tcU-zd-whF">
+            <objects>
+                <viewController storyboardIdentifier="AddDoorsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Cs-ZT-3bp" customClass="AddDoorsViewController" customModule="DoorConcept" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DrL-tA-Ui4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Im5-Co-165"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QcD-F6-esY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5E-3S-HeL">
+                                <rect key="frame" x="202" y="173" width="196" height="254"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAE-YJ-RQk" customClass="FUIButton">
+                                        <rect key="frame" x="41" y="214" width="115" height="40"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="addDoor:" destination="2Cs-ZT-3bp" eventType="touchUpInside" id="1B1-5k-VBb"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type the name for the new door" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IM-gp-8wq">
+                                        <rect key="frame" x="20" y="108" width="156" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XqM-oO-YlE">
+                                        <rect key="frame" x="48" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Door name ex: Main Door" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZs-IO-5R9">
+                                        <rect key="frame" x="4" y="166" width="188" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="254" id="aEu-IV-UIR"/>
+                                    <constraint firstAttribute="width" constant="196" id="sbc-nv-h5d"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o5E-3S-HeL" firstAttribute="centerY" secondItem="QcD-F6-esY" secondAttribute="centerY" id="aWu-pK-izQ"/>
+                            <constraint firstItem="o5E-3S-HeL" firstAttribute="centerX" secondItem="QcD-F6-esY" secondAttribute="centerX" id="oRM-mL-vgN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnAdd" destination="hAE-YJ-RQk" id="zb0-0y-nLD"/>
+                        <outlet property="imgDoors" destination="XqM-oO-YlE" id="noX-Pd-ndt"/>
+                        <outlet property="txtDoorName" destination="AZs-IO-5R9" id="MTf-Iu-rF7"/>
+                        <outlet property="yCenterConstraint" destination="aWu-pK-izQ" id="diz-qZ-zN2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EjO-lh-RBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1321" y="2833"/>
+        </scene>
         <!--History-->
         <scene sceneID="DkR-Ye-YP1">
             <objects>
@@ -467,7 +528,6 @@
                                     <outlet property="imgBuilding" destination="Wki-AO-a4X" id="MiH-h7-Tvw"/>
                                     <outlet property="lblSubtitle" destination="0Z2-Qh-r3M" id="e1g-A2-LLK"/>
                                     <outlet property="lblTitle" destination="5mS-vr-S2b" id="kkq-k9-2UU"/>
-                                    <segue destination="4o2-JA-yVN" kind="show" identifier="buildings" id="Yhj-YK-kNZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -494,7 +554,7 @@
         <!--Doors-->
         <scene sceneID="QUL-2A-CG7">
             <objects>
-                <tableViewController id="4o2-JA-yVN" customClass="DoorsTableViewController" customModule="DoorConcept" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DoorsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4o2-JA-yVN" customClass="DoorsTableViewController" customModule="DoorConcept" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" id="M5E-Xn-S02">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -561,7 +621,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Doors" id="O2D-yz-Lpg">
                         <barButtonItem key="backBarButtonItem" title=" " id="cuA-Js-5IC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qIp-pR-A2y">
+                            <color key="tintColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="AddDoor:" destination="4o2-JA-yVN" id="nUL-V2-qMR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnAdd" destination="qIp-pR-A2y" id="oGT-Iv-qGA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjq-ND-71e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -652,7 +721,4 @@
         <image name="history_icon.png" width="21" height="25"/>
         <image name="user_icon.png" width="24" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="g82-tq-FCC"/>
-    </inferredMetricsTieBreakers>
 </document>
