@@ -150,11 +150,12 @@ extension DoorDetailViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return door.permission?.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GrantedUserCell", forIndexPath: indexPath) as! GrantedUserTableViewCell
+        cell.configureCellWithUser((door.permission?.enumerate()[indexPath.row]) as! User)
         return cell
     }
     
@@ -190,5 +191,6 @@ extension DoorDetailViewController:UITableViewDelegate,UITableViewDataSource{
     
     func grantUser(){
         print("Adding a new user")
+        
     }
 }

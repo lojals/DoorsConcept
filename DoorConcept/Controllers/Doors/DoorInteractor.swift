@@ -50,6 +50,18 @@ class DoorsInteractor {
         }
     }
     
+    func getPermissionsByDoor(door:Door,completion:FetchCompletionHandler){
+        let fetchRequest = NSFetchRequest(entityName: "Permision")
+        do{
+            let fetchResults = try managedObjectContext.executeRequest(fetchRequest) as! NSAsynchronousFetchResult
+            let fetchBuilding    = fetchResults.finalResult as! [Permision]
+            fetchRequest.predicate = NSPredicate(format: "door == %@", door)
+            completion!(data:fetchBuilding, error: nil)
+        }catch{
+            completion!(data:nil,error: "CoreData error!")
+        }
+    }
+    
     func saveDoor(building:Building, name:String, avatar:String){
         let door           = NSEntityDescription.insertNewObjectForEntityForName("Door", inManagedObjectContext: managedObjectContext) as! Door
         door.doorName      = name

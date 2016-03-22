@@ -22,4 +22,9 @@ class GrantedUserTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func configureCellWithUser(user:User){
+        self.imgUser?.image   = UIImage(named: "user_" + user.userAvatar!)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.lblTitle.text    = user.userUsername
+    }
+    
 }
