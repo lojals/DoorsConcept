@@ -16,16 +16,11 @@ class DoorsTableViewController: UITableViewController {
     var doors:[Door] = [Door]()
     var building:Building!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
+    override func viewWillAppear(animated: Bool) {
+        loadDoors()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    func loadDoors(){
         if building != nil{
             doorInteractor.getDoorsByBuilding(building) { (data, error) -> Void in
                 if error == nil{
@@ -51,6 +46,7 @@ class DoorsTableViewController: UITableViewController {
                     print(error)
                 }
             })
+            btnAdd.enabled = false
         }
     }
 
@@ -88,6 +84,7 @@ class DoorsTableViewController: UITableViewController {
 
 extension DoorsTableViewController:SESlideTableViewCellDelegate{
     func slideTableViewCell(cell: SESlideTableViewCell!, didTriggerRightButton buttonIndex: Int) {
-        print("\(buttonIndex) \(cell.tag)")
+        doorInteractor.deleteDoor(doors[cell.tag])
+        self.loadDoors()
     }
 }

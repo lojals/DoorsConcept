@@ -13,13 +13,17 @@
         <attribute name="doorName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="doorState" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="building" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Building" inverseName="doors" inverseEntity="Building" syncable="YES"/>
+        <relationship name="history" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="History" inverseName="door" inverseEntity="History" syncable="YES"/>
         <relationship name="permission" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Permision" inverseName="door" inverseEntity="Permision" syncable="YES"/>
     </entity>
     <entity name="History" representedClassName=".History" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="door" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Door" inverseName="history" inverseEntity="Door" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="history" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Permision" representedClassName=".Permision" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="door" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Door" inverseName="permission" inverseEntity="Door" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="premission" inverseEntity="User" syncable="YES"/>
     </entity>
@@ -28,13 +32,14 @@
         <attribute name="userPassword" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userUsername" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="buildings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Building" inverseName="owner" inverseEntity="Building" syncable="YES"/>
+        <relationship name="history" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="History" inverseName="user" inverseEntity="History" syncable="YES"/>
         <relationship name="premission" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Permision" inverseName="user" inverseEntity="Permision" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-605" positionY="-109" width="128" height="118"/>
         <element name="Building" positionX="-405" positionY="-225" width="128" height="118"/>
-        <element name="Door" positionX="-90" positionY="-144" width="128" height="133"/>
-        <element name="Permision" positionX="-353" positionY="17" width="128" height="73"/>
-        <element name="History" positionX="-891" positionY="-220" width="128" height="73"/>
+        <element name="Door" positionX="-90" positionY="-144" width="128" height="150"/>
+        <element name="History" positionX="16" positionY="63" width="128" height="105"/>
+        <element name="Permision" positionX="-353" positionY="17" width="128" height="88"/>
+        <element name="User" positionX="-605" positionY="-109" width="128" height="135"/>
     </elements>
 </model>

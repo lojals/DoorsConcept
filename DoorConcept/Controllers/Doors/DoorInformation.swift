@@ -34,7 +34,8 @@ class DoorInformation: UIView {
         lblInformation               = UILabel()
         lblInformation.font          = UIFont.lightFlatFontOfSize(18)
         lblInformation.numberOfLines = 0
-        lblInformation.text          = "Location: Clay Solutions \nStatus: Closed"
+        let name                     = door?.building?.buildingName!
+        lblInformation.text          = "Location: \(name!) \nStatus: Closed"
         lblInformation.translatesAutoresizingMaskIntoConstraints = false
         lblInformation.sizeToFit()
         self.addSubview(lblInformation)
@@ -51,23 +52,6 @@ class DoorInformation: UIView {
         
     }
     
-    func setTransacStatus(status:DoorTransacStatus){
-        switch(status){
-            case .Authorized: lblStatus.text = DoorTransacStatus.Authorized.rawValue.uppercaseString
-                              lblStatus.textColor = UIColor.DCThemeColorMain()
-                              lblInformation.text = "Location: \(door?.building?.buildingName) \nStatus: Opened"
-                              imgDoor.tintColor   = UIColor.DCThemeColorMain()
-            case .Denied:     lblStatus.text = DoorTransacStatus.Denied.rawValue.uppercaseString
-                              lblStatus.textColor = UIColor.alizarinColor()
-                              imgDoor.tintColor   = UIColor.alizarinColor()
-            case .Ready:      lblStatus.text = DoorTransacStatus.Ready.rawValue.uppercaseString
-                              lblInformation.text = "Location: \(door?.building?.buildingName) \nStatus: Closed"
-                              lblStatus.textColor = UIColor.darkGrayColor()
-                              imgDoor.tintColor   = UIColor.lightGrayColor()
-        }
-        lblStatus.sizeToFit()
-    }
-    
     private func addUIConstraints(){
         let views = ["imgDoor":imgDoor,"lblInformation":lblInformation,"line":line,"lblStatus":lblStatus]
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[imgDoor]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
@@ -76,12 +60,29 @@ class DoorInformation: UIView {
         self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[imgDoor]-2-[line]-15-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         self.addConstraint(NSLayoutConstraint(item: self.lblStatus, attribute: .Left, relatedBy: .Equal, toItem: line, attribute: .Left, multiplier: 1, constant: 0))
     }
-    
 
+    func setTransacStatus(status:DoorTransacStatus){
+        switch(status){
+        case .Authorized: lblStatus.text = DoorTransacStatus.Authorized.rawValue.uppercaseString
+        lblStatus.textColor = UIColor.DCThemeColorMain()
+        let name = door?.building?.buildingName!
+        lblInformation.text = "Location: \(name!) \nStatus: Opened"
+        imgDoor.tintColor   = UIColor.DCThemeColorMain()
+        case .Denied:     lblStatus.text = DoorTransacStatus.Denied.rawValue.uppercaseString
+        lblStatus.textColor = UIColor.alizarinColor()
+        imgDoor.tintColor   = UIColor.alizarinColor()
+        case .Ready:      lblStatus.text = DoorTransacStatus.Ready.rawValue.uppercaseString
+        let name = door?.building?.buildingName!
+        lblInformation.text = "Location: \(name!) \nStatus: Closed"
+        lblStatus.textColor = UIColor.darkGrayColor()
+        imgDoor.tintColor   = UIColor.lightGrayColor()
+        }
+        lblStatus.sizeToFit()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         self.door = nil
         super.init(coder: aDecoder)
         print("Method not implemented yet")
     }
-
 }

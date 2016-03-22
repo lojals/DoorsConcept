@@ -1,5 +1,5 @@
 //
-//  Building+CoreDataProperties.swift
+//  History+CoreDataProperties.swift
 //  DoorConcept
 //
 //  Created by Jorge Raul Ovalle Zuleta on 3/22/16.
@@ -12,12 +12,11 @@
 import Foundation
 import CoreData
 
-extension Building {
+extension History {
 
-    @NSManaged var buildingAvatar: String?
-    @NSManaged var buildingCreatedAt: NSDate?
-    @NSManaged var buildingName: String?
-    @NSManaged var doors: NSSet?
-    @NSManaged var owner: User?
+    @NSManaged var date: NSDate?
+    @NSManaged var state: String?
+    @NSManaged var door: Door?
+    @NSManaged var user: User?
 
 }

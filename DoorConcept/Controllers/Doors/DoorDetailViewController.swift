@@ -10,7 +10,8 @@ import UIKit
 import FlatUIKit
 
 class DoorDetailViewController: UIViewController {
-
+    var doorInteractor:DoorsInteractor      = DoorsInteractor()
+    var historyInteractor:HistoryInteractor = HistoryInteractor()
     var btnOpen:FUIButton!
 
     var progress:UIProgressView!
@@ -21,6 +22,7 @@ class DoorDetailViewController: UIViewController {
     
     var isOwner:Bool = false
     var door:Door!
+    var permissions:[Permision] = [Permision]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +35,24 @@ class DoorDetailViewController: UIViewController {
         
         self.title = door.doorName!
         self.view.backgroundColor = UIColor.whiteColor()
-        
         self.addUIComponents()
         self.addUIConstraints()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.loadPermissions()
+    }
+    
+    func loadPermissions(){
+        doorInteractor.getPermissionsByDoor(door) { (data, error) -> Void in
+            if error == nil {
+                self.permissions = data as! [Permision]
+                
+                self.tblGrantedUsers.reloadData()
+            }else{
+                print(error!)
+            }
+        }
     }
     
     func addUIComponents(){
@@ -91,8 +108,7 @@ class DoorDetailViewController: UIViewController {
         }else{
             self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[progress(7)][bigContainer][btnOpen(72)]|", options:  NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         }
-        
-        
+
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[progress]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[btnOpen]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bigContainer]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
@@ -118,12 +134,13 @@ class DoorDetailViewController: UIViewController {
     func setTransacStatus(status:DoorTransacStatus){
         switch(status){
             case .Authorized: informationContainer.setTransacStatus(.Authorized)
+                              historyInteractor.saveHistory(self.door, user: UserService.sharedInstance.currentUser!, state: "authorized")
             case .Denied:     informationContainer.setTransacStatus(.Denied)
                               progress.progressTintColor = UIColor.alizarinColor()
+                              historyInteractor.saveHistory(self.door, user: UserService.sharedInstance.currentUser!, state: "denied")
             case .Ready:      informationContainer.setTransacStatus(.Ready)
                               progress.progressTintColor = UIColor.DCThemeColorMain()
         }
-        
     }
 }
 
@@ -150,12 +167,12 @@ extension DoorDetailViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return door.permission?.count ?? 0
+        return permissions.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GrantedUserCell", forIndexPath: indexPath) as! GrantedUserTableViewCell
-        cell.configureCellWithUser((door.permission?.enumerate()[indexPath.row]) as! User)
+        cell.configureCellWithUser(permissions[indexPath.row].user!)
         return cell
     }
     
@@ -182,7 +199,7 @@ extension DoorDetailViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 44
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -190,7 +207,22 @@ extension DoorDetailViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func grantUser(){
-        print("Adding a new user")
-        
+        let alertVC : UIAlertController = UIAlertController(title: "Give some permission!", message: "Type the username you want to give access to this door!", preferredStyle: UIAlertControllerStyle.Alert)
+        alertVC.addTextFieldWithConfigurationHandler { (textfield) -> Void in
+            textfield.placeholder = "Username ex: Test.1"
+        }
+        alertVC.addAction(UIAlertAction(title: "Ok", style: .Default, handler: {  (alert: UIAlertAction!) in
+            if let textField = alertVC.textFields?.first{
+                self.doorInteractor.givePermission(textField.text!, door: self.door, completion: { (error) -> Void in
+                    if error == nil {
+                        print(error)
+                        self.loadPermissions()
+                    }else{
+                        print(error!)
+                    }
+                })
+            }}))
+        alertVC.addAction(UIAlertAction(title: "Cancel", style:.Cancel, handler: nil))
+        self.presentViewController(alertVC, animated: true, completion: nil)
     }
 }

@@ -20,6 +20,8 @@ enum DoorTransacStatus:String{
     case Ready      = "Ready!"
 }
 
+typealias CompletionHandler = ((error:String?)->Void)?
+
 class DoorsInteractor {
     private let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
@@ -51,16 +53,56 @@ class DoorsInteractor {
     }
     
     func getPermissionsByDoor(door:Door,completion:FetchCompletionHandler){
-        let fetchRequest = NSFetchRequest(entityName: "Permision")
+        let fetchRequest       = NSFetchRequest(entityName: "Permision")
+        fetchRequest.predicate = NSPredicate(format: "door == %@", door)
         do{
-            let fetchResults = try managedObjectContext.executeRequest(fetchRequest) as! NSAsynchronousFetchResult
-            let fetchBuilding    = fetchResults.finalResult as! [Permision]
-            fetchRequest.predicate = NSPredicate(format: "door == %@", door)
+            let fetchResults  = try managedObjectContext.executeRequest(fetchRequest) as! NSAsynchronousFetchResult
+            let fetchBuilding = fetchResults.finalResult as! [Permision]
+
             completion!(data:fetchBuilding, error: nil)
         }catch{
             completion!(data:nil,error: "CoreData error!")
         }
     }
+    
+    func givePermission(name:String, door:Door, completion:CompletionHandler){
+        let fetchRequest       = NSFetchRequest(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format: "userUsername = %@", name)
+        do{
+            let fetchResults = try managedObjectContext.executeRequest(fetchRequest) as! NSAsynchronousFetchResult
+            let fetchUser    = fetchResults.finalResult as! [User]
+            
+            if fetchUser.count > 0 {
+                let permission  = NSEntityDescription.insertNewObjectForEntityForName("Permision", inManagedObjectContext: managedObjectContext) as! Permision
+                permission.door = door
+                permission.user = fetchUser.first!
+                permission.date = NSDate()
+                
+                try managedObjectContext.save()
+                
+                completion!(error: nil)
+            }else{
+                completion!(error: "User doesn't exist")
+            }
+        }catch{
+            completion!(error: "CoreData error")
+        }
+    }
+    
+    func deleteDoor(door:Door){
+        if UserService.sharedInstance.currentUser! == door.building?.owner{
+            managedObjectContext.deleteObject(door)
+            do{
+                try managedObjectContext.save()
+            }catch{
+                print("Some error deleting Door")
+            }
+        }else{
+            //Not yet implemented un UI
+            print("That's not your door")
+        }
+    }
+    
     
     func saveDoor(building:Building, name:String, avatar:String){
         let door           = NSEntityDescription.insertNewObjectForEntityForName("Door", inManagedObjectContext: managedObjectContext) as! Door
@@ -74,6 +116,7 @@ class DoorsInteractor {
         let permission = NSEntityDescription.insertNewObjectForEntityForName("Permision", inManagedObjectContext: managedObjectContext) as! Permision
         permission.door = door
         permission.user = building.owner
+        permission.date = NSDate()
 
         do{
             try managedObjectContext.save()
@@ -81,6 +124,7 @@ class DoorsInteractor {
             print("Some error inserting Door")
         }
     }
+    
     
     func checkPermission(user:User,door:Door,completion:FetchCompletionHandler){
         let fetchRequest = NSFetchRequest(entityName: "Permision")

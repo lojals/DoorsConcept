@@ -15,7 +15,6 @@ class GrantedUserTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -23,8 +22,12 @@ class GrantedUserTableViewCell: UITableViewCell {
     }
     
     func configureCellWithUser(user:User){
-        self.imgUser?.image   = UIImage(named: "user_" + user.userAvatar!)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        self.lblTitle.text    = user.userUsername
+        self.imgUser?.image    = UIImage(named: "user_" + user.userAvatar!)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.imgUser.tintColor = UIColor.darkGrayColor()
+        self.lblTitle.text     = user.userUsername
+        let df = NSDateFormatter()
+        df.dateFormat = "dd/MMM/YYYY"
+        self.lblSubtitle.text  = "Given " + df.stringFromDate(UserService.sharedInstance.lastLogin())
     }
     
 }
