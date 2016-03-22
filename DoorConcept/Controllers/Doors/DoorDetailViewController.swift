@@ -40,7 +40,7 @@ class DoorDetailViewController: UIViewController {
     
     func addUIComponents(){
         progress                   = UIProgressView()
-        progress.trackTintColor    = UIColor.lightGrayColor()
+        progress.trackTintColor    = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1)
         progress.progressTintColor = UIColor.DCThemeColorMain()
         progress.progress          = 0.0
         progress.translatesAutoresizingMaskIntoConstraints =  false
@@ -50,8 +50,9 @@ class DoorDetailViewController: UIViewController {
         bigContainer.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(bigContainer)
         
-        informationContainer = DoorInformation(frame: CGRectZero)
+        informationContainer = DoorInformation(frame: CGRectZero, door: self.door)
         informationContainer.translatesAutoresizingMaskIntoConstraints = false
+        informationContainer.setTransacStatus(.Ready)
         bigContainer.addSubview(informationContainer)
         
         btnOpen = FUIButton()
@@ -103,11 +104,42 @@ class DoorDetailViewController: UIViewController {
     }
     
     func openDoor(){
-        progress.setProgress(1, animated: true)
+        btnOpen.enabled = false
+        
+        let doorServer = DoorServerSimulator(responseDelegate: self)
+        doorServer.openDoor(door, user: UserService.sharedInstance.currentUser!)
+        
+        UIView.animateWithDuration(2, animations: { () -> Void in
+            self.progress.progress = 1
+            self.progress.layoutIfNeeded()
+        })
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func setTransacStatus(status:DoorTransacStatus){
+        switch(status){
+            case .Authorized: informationContainer.setTransacStatus(.Authorized)
+            case .Denied:     informationContainer.setTransacStatus(.Denied)
+                              progress.progressTintColor = UIColor.alizarinColor()
+            case .Ready:      informationContainer.setTransacStatus(.Ready)
+                              progress.progressTintColor = UIColor.DCThemeColorMain()
+        }
+        
+    }
+}
+
+extension DoorDetailViewController:DoorServerSimulatorResponse{
+    func doorServerOpenedDoor(opened: Bool) {
+        if opened{
+            self.setTransacStatus(.Authorized)
+        }else{
+            self.setTransacStatus(.Denied)
+        }
+    }
+    
+    func doorJustClosed() {
+        btnOpen.enabled = true
+        self.setTransacStatus(.Ready)
+        self.progress.progress = 0
     }
 }
 

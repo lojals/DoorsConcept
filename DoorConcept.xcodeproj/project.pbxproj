@@ -27,6 +27,7 @@
 		7A32C9BE1CA0A0520081EBF4 /* BuildingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9BD1CA0A0520081EBF4 /* BuildingsInteractor.swift */; };
 		7A32C9C11CA0A9F90081EBF4 /* DoorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9BF1CA0A9F90081EBF4 /* DoorInteractor.swift */; };
 		7A32C9C21CA0A9F90081EBF4 /* AddDoorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9C01CA0A9F90081EBF4 /* AddDoorsViewController.swift */; };
+		7A32C9C41CA0F1910081EBF4 /* DoorServerSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C9C31CA0F1910081EBF4 /* DoorServerSimulator.swift */; };
 		7AE17F411C9C64ED0018F260 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F401C9C64ED0018F260 /* AppDelegate.swift */; };
 		7AE17F461C9C64ED0018F260 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE17F441C9C64ED0018F260 /* Main.storyboard */; };
 		7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AE17F471C9C64ED0018F260 /* DoorConcept.xcdatamodeld */; };
@@ -177,6 +178,7 @@
 		7A32C9BD1CA0A0520081EBF4 /* BuildingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingsInteractor.swift; sourceTree = "<group>"; };
 		7A32C9BF1CA0A9F90081EBF4 /* DoorInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorInteractor.swift; sourceTree = "<group>"; };
 		7A32C9C01CA0A9F90081EBF4 /* AddDoorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDoorsViewController.swift; sourceTree = "<group>"; };
+		7A32C9C31CA0F1910081EBF4 /* DoorServerSimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorServerSimulator.swift; sourceTree = "<group>"; };
 		7AE17F3D1C9C64ED0018F260 /* DoorConcept.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorConcept.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE17F401C9C64ED0018F260 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		7AE17F451C9C64ED0018F260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -296,7 +298,7 @@
 		7AE180CA1C9E02B70018F260 /* user_9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_9@2x.png"; sourceTree = "<group>"; };
 		7AE180CB1C9E02B70018F260 /* user_9@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_9@3x.png"; sourceTree = "<group>"; };
 		7AE180F01C9E09270018F260 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		7AE180F21C9E0E5F0018F260 /* DoorDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorDetailViewController.swift; sourceTree = "<group>"; };
+		7AE180F21C9E0E5F0018F260 /* DoorDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorDetailViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		C941FFC8B231DA9C350FF1CE /* Pods-DoorConcept.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorConcept.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoorConcept/Pods-DoorConcept.debug.xcconfig"; sourceTree = "<group>"; };
 		DE35B5E3785EC3B2C948928F /* Pods_DoorConcept.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoorConcept.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E843F270DC01459121EE3F36 /* Pods-DoorConcept.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorConcept.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoorConcept/Pods-DoorConcept.release.xcconfig"; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 				7AE180F21C9E0E5F0018F260 /* DoorDetailViewController.swift */,
 				7AE17FFE1C9CD20B0018F260 /* Custom Cell */,
 				7A32C9881C9FAF8A0081EBF4 /* DoorInformation.swift */,
+				7A32C9C31CA0F1910081EBF4 /* DoorServerSimulator.swift */,
 			);
 			path = Doors;
 			sourceTree = "<group>";
@@ -950,6 +953,7 @@
 				7AE17F491C9C64ED0018F260 /* DoorConcept.xcdatamodeld in Sources */,
 				7A32C9B11CA064510081EBF4 /* Building+CoreDataProperties.swift in Sources */,
 				7A32C9B41CA064510081EBF4 /* Door.swift in Sources */,
+				7A32C9C41CA0F1910081EBF4 /* DoorServerSimulator.swift in Sources */,
 				7AE17FBC1C9CB5290018F260 /* BuildingsTableViewCell.swift in Sources */,
 				7AE17F901C9C989E0018F260 /* BuildingsTableViewController.swift in Sources */,
 				7A32C9921C9FC0670081EBF4 /* GrantedUserTableViewCell.swift in Sources */,

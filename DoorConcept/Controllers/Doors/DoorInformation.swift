@@ -14,8 +14,10 @@ class DoorInformation: UIView {
     var lblInformation:UILabel!
     var line:UIView!
     var lblStatus:UILabel!
+    let door:Door?
     
-    override init(frame:CGRect){
+    init(frame:CGRect, door:Door){
+        self.door = door
         super.init(frame: frame)        
         self.addUIComponents()
         self.addUIConstraints()
@@ -23,7 +25,8 @@ class DoorInformation: UIView {
     
     private func addUIComponents(){
         imgDoor                 = UIImageView()
-        imgDoor.image           = UIImage(named: "door_0")
+        imgDoor.image           = UIImage(named: "door_" + (door?.doorAvatar)!)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        imgDoor.tintColor       = UIColor.lightGrayColor()
         imgDoor.contentMode     = .ScaleAspectFit
         imgDoor.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(imgDoor)
@@ -43,12 +46,26 @@ class DoorInformation: UIView {
         
         lblStatus      = UILabel()
         lblStatus.font = UIFont.lightFlatFontOfSize(20)
-        lblStatus.text = "ACCESS DENIED!"
-        lblStatus.textColor = UIColor.alizarinColor()
         lblStatus.translatesAutoresizingMaskIntoConstraints = false
-        lblStatus.sizeToFit()
         self.addSubview(lblStatus)
         
+    }
+    
+    func setTransacStatus(status:DoorTransacStatus){
+        switch(status){
+            case .Authorized: lblStatus.text = DoorTransacStatus.Authorized.rawValue.uppercaseString
+                              lblStatus.textColor = UIColor.DCThemeColorMain()
+                              lblInformation.text = "Location: \(door?.building?.buildingName) \nStatus: Opened"
+                              imgDoor.tintColor   = UIColor.DCThemeColorMain()
+            case .Denied:     lblStatus.text = DoorTransacStatus.Denied.rawValue.uppercaseString
+                              lblStatus.textColor = UIColor.alizarinColor()
+                              imgDoor.tintColor   = UIColor.alizarinColor()
+            case .Ready:      lblStatus.text = DoorTransacStatus.Ready.rawValue.uppercaseString
+                              lblInformation.text = "Location: \(door?.building?.buildingName) \nStatus: Closed"
+                              lblStatus.textColor = UIColor.darkGrayColor()
+                              imgDoor.tintColor   = UIColor.lightGrayColor()
+        }
+        lblStatus.sizeToFit()
     }
     
     private func addUIConstraints(){
@@ -62,6 +79,7 @@ class DoorInformation: UIView {
     
 
     required init?(coder aDecoder: NSCoder) {
+        self.door = nil
         super.init(coder: aDecoder)
         print("Method not implemented yet")
     }

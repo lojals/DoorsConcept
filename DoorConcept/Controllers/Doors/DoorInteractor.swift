@@ -14,6 +14,12 @@ enum DoorState:String{
     case Closed = "Closed"
 }
 
+enum DoorTransacStatus:String{
+    case Authorized = "Authorized"
+    case Denied     = "Access Denied!"
+    case Ready      = "Ready!"
+}
+
 class DoorsInteractor {
     private let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
@@ -51,11 +57,33 @@ class DoorsInteractor {
         door.doorAvatar    = avatar
         door.doorCreatedAt = NSDate()
         door.building      = building
+        
+        
+        let permission = NSEntityDescription.insertNewObjectForEntityForName("Permision", inManagedObjectContext: managedObjectContext) as! Permision
+        permission.door = door
+        permission.user = building.owner
 
         do{
             try managedObjectContext.save()
         }catch{
             print("Some error inserting Door")
+        }
+    }
+    
+    func checkPermission(user:User,door:Door,completion:FetchCompletionHandler){
+        let fetchRequest = NSFetchRequest(entityName: "Permision")
+        fetchRequest.predicate = NSPredicate(format: "user == %@ AND door == %@", user,door)
+        do{
+            let fetchResults   = try managedObjectContext.executeRequest(fetchRequest) as! NSAsynchronousFetchResult
+            let fetchPermision = fetchResults.finalResult as! [Door]
+            if fetchPermision.count > 0 {
+                completion!(data:fetchPermision, error: nil)
+            }else{
+                completion!(data:fetchPermision, error: "Doesn't have permission")
+            }
+            
+        }catch{
+            completion!(data:nil,error: "CoreData error!")
         }
     }
     
